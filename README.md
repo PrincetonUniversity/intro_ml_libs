@@ -14,7 +14,7 @@ This guide provides demonstrations of the effective use of popular machine learn
 - [Python at Princeton](https://github.com/PrincetonUniversity/installing_python_packages) | [Scikit-Learn website](https://scikit-learn.org/stable/)  
 
 ## Workshop Survey
-[Click here](https://forms.gle/WhoAcb1J82XVTqq38)
+[Click here](https://forms.gle/X8EV8Q3BckifxAYx7)
 
 ## Getting Help
 
