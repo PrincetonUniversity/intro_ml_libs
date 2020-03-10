@@ -1,7 +1,7 @@
 # Intro to the Machine Learning Libraries
 
 ## About
-This guide provides demonstrations of the effective usage of popular machine learning libraries on the HPC clusters at Princeton. It shows how to install the libraries and how to write Slurm scripts to take advantage of multi-threading and GPUs when possible. A comparison of the libraries is presented. Machine learning theory is not covered.
+This guide provides demonstrations of the effective use of popular machine learning libraries on the HPC clusters at Princeton. It shows how to install the libraries and how to write Slurm scripts to take advantage of multi-threading and GPUs when possible. A comparison of the libraries is presented. Machine learning theory is not covered.
 
 ## Useful links
 - [PyTorch at Princeton](https://github.com/PrincetonUniversity/install_pytorch)  |  [PyTorch.org](https://pytorch.org)  
