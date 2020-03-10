@@ -22,6 +22,8 @@
 
    `#SBATCH --reservation=mllibs`
    
++ Run the `checkquota` command and make sure you have 4 GB of space. Delete or move files if necessary.   
+   
 + Because we have a limited number of GPUs on Adroit, keep the total run time limit of your jobs to 30 seconds:
 
    `#SBATCH --time=00:00:30`
