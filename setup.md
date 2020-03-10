@@ -28,4 +28,4 @@
 
 + To cancel a job use the command `scancel <JobID>` where `<JobID>` can be obtained from the command `squeue -u $USER`.
 
-+ Go to the [main page](README.md) of this repo
++ Go to the [main page](../intro_ml_libs) of this repo
