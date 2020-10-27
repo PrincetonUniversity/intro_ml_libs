@@ -16,6 +16,10 @@ This guide provides demonstrations of the effective use of popular machine learn
 ## Workshop Survey
 [Click here](https://forms.gle/D863NZSHJfWU6C2S8)
 
+## Attendance Sheet
+
+[Click here](https://docs.google.com/spreadsheets/d/1t0T7YI81exo_CEIMLoViIwjwUNYMrgOIXqkmar3WRPw/edit#gid=0)
+
 ## Getting Help
 
 If you encounter any difficulties while working with the machine learning libraries on the HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
