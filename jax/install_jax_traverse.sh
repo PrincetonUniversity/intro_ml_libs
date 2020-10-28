@@ -17,6 +17,5 @@ python build/build.py --enable_cuda \
                       --noenable_mkl_dnn \
                       --cuda_compute_capabilities 7.0 \
                       --bazel_path /usr/bin/bazel
-
 pip install -e build
 pip install -e .
