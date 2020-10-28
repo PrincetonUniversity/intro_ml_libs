@@ -6,7 +6,7 @@
 
 + Open a terminal (e.g., Terminal, PowerShell, PuTTY) [<a href="https://researchcomputing.princeton.edu/education/training/hardware-and-software-requirements-picscie-workshops" target="_blank">click here</a> for help]
 
-+ If a faculty member has sponsored an account for you on TigerGPU then you may use that if the queue is not long.
++ If you have an account on TigerGPU or Traverse then you may use that if the queue is not long.
 
 + Otherwise, please SSH to Adroit in the terminal: `ssh <NetID>@adroit.princeton.edu` [click [here](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu) for help]
 
