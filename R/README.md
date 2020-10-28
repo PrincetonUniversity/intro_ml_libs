@@ -51,7 +51,7 @@ Rscript demo.R
 Submit the job:
 
 ```
-$ cd intro_ml_libs/R/myjob
+$ cd intro_ml_libs/R
 $ wget https://raw.githubusercontent.com/PacktPublishing/Machine-Learning-with-R-Third-Edition/master/Chapter05/credit.csv
 $ sbatch job.slurm
 ```
