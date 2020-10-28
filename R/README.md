@@ -79,9 +79,8 @@ The `xgboost` package is [available](https://xgboost.readthedocs.io/en/latest/R-
 
 ## R and Deep Learning
 
+[R Interface to TensorFlow](https://tensorflow.rstudio.com/)
+
 [MXNet](https://mxnet.apache.org/api/r)
  >  MXNet supports the R programming language. The MXNet R package brings flexible and efficient GPU computing and state-of-art deep learning to R. It enables you to write seamless tensor/matrix computation with multiple GPUs in R. It also lets you construct and customize the state-of-art deep learning models in R, and apply them to tasks, such as image classification and data science challenges.
 
-[R Interface to TensorFlow](https://oncomputingwell.princeton.edu/2019/06/installing-and-using-tensorflow-with-r)
-
-[R interface to keras](https://www.amazon.com/Deep-Learning-R-Francois-Chollet/dp/161729554X/ref=sr_1_3?keywords=deep+learning+with+R&qid=1583689546&sr=8-3)
