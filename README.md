@@ -2,7 +2,7 @@
 
 ## About
 
-This workshop provides demonstrations of the effective use of popular machine learning libraries on the HPC clusters at Princeton. It shows how to install each library as well as how to write Slurm scripts to take advantage of multi-threading and/or GPUs. The material covers PyTorch, TensorFlow, JAX, Scikit-learn, Spark, NVIDIA Rapids, Snap ML, Julia and R.
+This workshop provides demonstrations of the effective usage of popular machine learning libraries on the HPC clusters at Princeton. It shows how to install each library as well as how to write Slurm scripts to take advantage of multi-threading and/or GPUs. The material covers PyTorch, TensorFlow, JAX, Scikit-learn, Spark, NVIDIA Rapids, Snap ML, Julia and R.
 
 <!--
 ## Useful links
