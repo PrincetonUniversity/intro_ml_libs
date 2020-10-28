@@ -14,7 +14,7 @@ JAX must be built from source to use on the GPU clusters as [described here](htt
 ```
 $ ssh <YourNetID>@tigergpu.princeton.edu
 $ cd software  # or another directory
-$ wget
+$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/install_jax_adroitgpu.sh
 $ bash install_jax_tigergpu.sh | tee jax.log
 ```
 
