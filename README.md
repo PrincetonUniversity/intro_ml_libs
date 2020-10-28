@@ -15,7 +15,7 @@ This workshop provides demonstrations of the effective usage of popular machine 
 - [R at Princeton](https://researchcomputing.princeton.edu/R) | [R ML packages on CRAN](https://cran.r-project.org/web/views/MachineLearning.html) 
 - [Python at Princeton](https://github.com/PrincetonUniversity/installing_python_packages) | [Scikit-Learn website](https://scikit-learn.org/stable/)  
 -->
-<!--
+
 ## Adroit Reservation
 
 Add the following line to your Slurm script for access to the V100 GPU node during the workshop:
@@ -23,7 +23,6 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ```
 #SBATCH --reservation=mllib      # REMOVE THIS LINE AFTER THE WORKSHOP
 ```
--->
 
 ## Workshop Survey
 [Click here](https://forms.gle/D863NZSHJfWU6C2S8)
