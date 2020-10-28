@@ -32,7 +32,7 @@ system.time(train(default ~ ., data = credit, method="rf"))
 
 Below is an appropriate Slurm script that takes advantage of the parallelism offered by `caret`:
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=myjob         # create a short name for your job
 #SBATCH --nodes=1                # node count
