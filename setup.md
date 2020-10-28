@@ -22,7 +22,7 @@ Performing a Conda install of one of the libraries in this repo requires between
 
 ### Adroit
 
-Edit your file as follows:
+Create your file as follows:
 
 ```
 $ cat ~/.condarc
@@ -33,6 +33,8 @@ envs_dirs:
 ```
 
 ### Della, Perseus, Tiger or Traverse
+
+Create your file as follows:
 
 ```
 $ cat ~/.condarc
