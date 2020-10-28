@@ -12,6 +12,8 @@
 
 + If you are new to Linux then consider using the MyAdroit web portal (VPN required): [https://myadroit.princeton.edu](https://myadroit.princeton.edu)
 
++ Run the [checkquota](https://researchcomputing.princeton.edu/checkquota) command to make sure that you have free space
+
 + Go to the [main page](https://github.com/PrincetonUniversity/intro_ml_libs) of this repo
 
 ## Where to store your Conda environments
