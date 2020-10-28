@@ -1,1 +1,1 @@
-###  Redirect: [https://github.com/PrincetonUniversity/install_pytorch](https://github.com/PrincetonUniversity/install_pytorch)
+###  Redirect: [https://researchcomputing.princeton.edu/pytorch](https://researchcomputing.princeton.edu/pytorch)
