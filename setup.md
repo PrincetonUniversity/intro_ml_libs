@@ -8,7 +8,7 @@
 
 + If you have an account on TigerGPU or Traverse then you may use that if the queue is not long.
 
-+ Otherwise, please SSH to Adroit in the terminal: `ssh <NetID>@adroit.princeton.edu` [click [here](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu) for help]
++ Otherwise, please SSH to Adroit in the terminal: `ssh <YourNetID>@adroit.princeton.edu` [click [here](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu) for help]
 
 + If you are new to Linux then consider using the MyAdroit web portal (VPN required): [https://myadroit.princeton.edu](https://myadroit.princeton.edu)
 
