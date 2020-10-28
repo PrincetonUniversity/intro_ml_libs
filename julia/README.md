@@ -121,6 +121,8 @@ Note that there are no GPUs on the head node of TigerGPU and no internet connect
 
 ## Knet
 
+[Knet documentation](https://denizyuret.github.io/Knet.jl/latest/)  
+[Knet on GitHub](https://github.com/denizyuret/Knet.jl) 
 
 ## TensorFlow
 
@@ -137,8 +139,6 @@ There is a Julia package called [TensorFlow.jl](https://github.com/malmaud/Tenso
 [Julia Documentation](https://docs.julialang.org/en/v1/)  
 [Flux website](https://fluxml.ai/)  
 [Flux documentation](https://fluxml.ai/Flux.jl/stable/)  
-[Flux on GitHub](https://github.com/FluxML/Flux.jl)  
-[Knet documentation](https://denizyuret.github.io/Knet.jl/latest/)  
-[Knet on GitHub](https://github.com/denizyuret/Knet.jl)  
+[Flux on GitHub](https://github.com/FluxML/Flux.jl)   
 [DecisionTree.jl](https://github.com/bensadeghi/DecisionTree.jl)
 
