@@ -42,7 +42,7 @@ See [this page](https://researchcomputing.princeton.edu/python) for Slurm script
 ```
 $ cd /scratch/gpfs/<YourNetID>
 $ mkdir myjob && cd myjob
-$ wget https://raw.githubusercontent.com/jdh4/machine_learning_libraries/master/jax/download_mnist.py
+$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/download_data.py
 $ python3 download_mnist.py
 ```
 
