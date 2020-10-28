@@ -51,11 +51,11 @@ accuracy(valX, valY) = 0.473
 accuracy(valX, valY) = 0.488
 ```
 
-The script took 50 minutes to run and required 2.4 GB of memory.
+The script took 16 minutes to run and required 3 GB of memory.
 
 ## Flux with GPUs
 
-First we need to add the GPU packages:
+First we need to add the packages:
 
 ```bash
 # ssh adroit
@@ -67,7 +67,7 @@ $ # press the backspace or delete key
 julia> exit()
 ```
 
-
+Next download the script and the data:
 
 ```bash
 $ cd intro_machine_learning_libs/julia/flux_gpu
@@ -81,43 +81,7 @@ julia> exit()
 $ sbatch job.slurm
 ```
 
-Below is an appropriate Slurm script (`job.slurm`):
-
-```bash
-#!/bin/bash
-#SBATCH --job-name=flux-gpu      # create a short name for your job
-#SBATCH --nodes=1                # node count
-#SBATCH --ntasks=1               # total number of tasks across all nodes
-#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
-#SBATCH --gres=gpu:tesla_v100:1  # number of gpus per node
-#SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
-
-module purge
-module load julia/1.5.0 cudatoolkit/11.0 cudnn/cuda-11.0/8.0.2
-
-julia ../60-minute-blitz.jl
-```
-
-Submit the job with: sbatch job.slurm
-
-Here's the output on Adroit:
-
-```
-┌ Warning: Some registries failed to update:
-│     — /home/jdh4/.julia/registries/General — failed to fetch from repo
-└ @ Pkg.Types /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.2/Pkg/src/Types.jl:1171
-[ Info: Building the CUDAnative run-time library for your sm_35 device, this might take a while...
-Activating environment at `~/flux-env/Project.toml`
-  Updating registry at `~/.julia/registries/General`
-  Updating git-repo `https://github.com/JuliaRegistries/General.git`
-Float32[2.0, 4.0, 6.0]
-Float32[-0.835879, 0.3685953, 1.0108142, -0.29181987, 0.31272212]
-```
-
-The GPU version ran about 2.6x faster than the CPU version.
-
-Note that there are no GPUs on the head node of TigerGPU and no internet connection on the compute nodes. To run MNIST for example you will need to download the data first.
+You may find that the Julia script still tries to download the data on the compute node which will fail.
 
 ## Knet
 
