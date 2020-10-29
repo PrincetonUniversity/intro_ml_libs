@@ -24,7 +24,6 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ```
 #SBATCH --reservation=mllib      # REMOVE THIS LINE AFTER THE WORKSHOP
 ```
--->
 
 ## Workshop Survey
 [Click here](https://forms.gle/D863NZSHJfWU6C2S8)
@@ -32,6 +31,7 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ## Attendance Sheet
 
 [Click here](https://docs.google.com/spreadsheets/d/1t0T7YI81exo_CEIMLoViIwjwUNYMrgOIXqkmar3WRPw/edit#gid=0)
+-->
 
 ## Getting Help
 
