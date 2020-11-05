@@ -15,7 +15,7 @@ The session below illustrates how to create a simple DataFrame in the PySpark sh
 ```bash
 $ ssh <YourNetID>@adroit.princeton.edu  # or another cluster
 $ salloc --nodes=1 --ntasks=1 --time=10
-$ module load anaconda3/2018.12 spark/hadoop2.7/2.4.6
+$ module load anaconda3/2019.10 spark/hadoop2.7/2.4.6
 $ spark-start
 $ pyspark
 
@@ -201,7 +201,7 @@ You can see the updated examples on [GitHub](https://github.com/apache/spark/tre
 #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2018.12
+module load anaconda3/2019.10
 module load spark/hadoop2.7/2.4.6
 
 spark-start
