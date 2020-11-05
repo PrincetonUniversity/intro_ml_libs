@@ -10,7 +10,7 @@
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
-module load anaconda3/2018.12 spark/hadoop2.7/2.4.6
+module load anaconda3/2019.10 spark/hadoop2.7/2.4.6
 
 spark-start
 spark-submit --total-executor-cores 6 --executor-memory 4G random_forest_classifier_example.py
