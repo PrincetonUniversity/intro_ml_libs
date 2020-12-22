@@ -9,7 +9,7 @@ together for high-performance machine learning research.
 
 ### GPU Version (TigerGPU, Traverse, Adroit)
 
-JAX must be built from source to use on the GPU clusters as [described here](https://jax.readthedocs.io/en/latest/developer.html). Below is the build procedure for TigerGPU (for Traverse and Adroit see notes below):
+JAX must be built from source to use on the GPU clusters as [described here](https://jax.readthedocs.io/en/latest/developer.html). Below is the build procedure for TigerGPU (for Traverse and Adroit see notes below and use either `install_jax_traverse.sh` or `install_jax_adroit.sh`):
 
 ```
 $ ssh <YourNetID>@tigergpu.princeton.edu
