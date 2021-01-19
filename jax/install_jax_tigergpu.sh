@@ -1,7 +1,7 @@
 #!/bin/bash
 module purge
-module load anaconda3/2020.7
-conda create --name jax-gpu numpy scipy cython six -y
+module load anaconda3/2020.11
+conda create --name jax-gpu python=3.8 numpy scipy cython six -y
 conda activate jax-gpu
 
 git clone https://github.com/google/jax
@@ -12,5 +12,5 @@ python build/build.py --enable_cuda  \
                       --cuda_compute_capabilities 6.0 \
                       --enable_march_native \
                       --enable_mkl_dnn
-pip install -e build
+pip install dist/*.whl
 pip install -e .
