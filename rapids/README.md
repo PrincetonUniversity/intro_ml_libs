@@ -24,7 +24,7 @@ Install `cuml` and its dependencies `cudf` and `dask-cudf`:
 
 ```bash
 # for live workshop ~/.condarc should be directing the install to /scratch/network or /scratch/gpfs
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ conda create -n rapids-0.16 -c rapidsai -c nvidia -c conda-forge -c defaults cuml=0.16 python=3.8 cudatoolkit=10.2
 ```
 
@@ -32,7 +32,7 @@ Or install all components of Rapids:
 
 ```bash
 # for live workshop ~/.condarc should be directing the install to /scratch/network or /scratch/gpfs
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ conda create -n rapids-0.16 -c rapidsai -c nvidia -c conda-forge -c defaults rapids=0.16 python=3.8 cudatoolkit=10.2
 ```
 
@@ -45,7 +45,7 @@ There is also a container [here](https://hub.docker.com/r/rapidsai/rapidsai/).
 
 ```
 $ ssh <YourNetID>@traverse.princeton.edu
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ CHNL="https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda"
 $ conda create --name rapids-env --channel ${CHNL} cudf cuml
 # accept the license agreement
@@ -63,7 +63,7 @@ Below is a simple interactive session on Adroit checking the installation:
 
 ```bash
 $ salloc -N 1 -n 1 -t 5 --gres=gpu:tesla_v100:1
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ conda activate rapids-0.16
 $ python
 >>> import cudf
@@ -95,7 +95,7 @@ Submitting a job to the Slurm scheduler:
 #SBATCH --gres=gpu:tesla_v100:1  # this line is for adroit only
 
 module purge
-module load anaconda3
+module load anaconda3/2020.11
 conda activate rapids-0.16
 
 python rapids.py
@@ -140,16 +140,14 @@ Below is an appropriate Slurm script:
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # total memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --gres=gpu:tesla_v100:2
+#SBATCH --gres=gpu:2
 
 module purge
-module load anaconda3
+module load anaconda3/2020.11
 conda activate rapids-0.16
 
 python rapids.py
 ```
-
-Use `#SBATCH --gres=gpu:tesla_v100:2` on Adroit and `#SBATCH --gres=gpu:2` on Tiger.
 
 Below is the output of this simple example:
 
