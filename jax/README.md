@@ -33,7 +33,7 @@ Follow the directions above to build from source.
 Here are the installation directions for the CPU-only clusters:
 
 ```
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
 
@@ -52,7 +52,7 @@ First obtain the JAX script. Also, the compute nodes do not have internet access
 
 ```bash
 $ ssh <YourNetID>@tigergpu.princeton.edu
-$ module load anaconda3
+$ module load anaconda3/2020.11
 $ conda activate jax-gpu  # installation directions above
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ wget https://raw.githubusercontent.com/google/jax/master/examples/mnist_classifier.py
