@@ -7,7 +7,7 @@ This workshop provides demonstrations of the effective usage of popular machine 
 ## AI for Science Bootcamp, by NVIDIA
 Tue May 18, 9am-12:30pm & Wed May 19, 9am-12:30pm  
 Virtual workshop (Zoom link will be emailed to accepted participants)  
-[Registration is required](http://bit.ly/PU_AIforScience_app_May2021)
+[Registration is required](https://researchcomputing.princeton.edu/events/2021/ai-science-bootcamp-nvidia)
 
 <!--
 ## Useful links
