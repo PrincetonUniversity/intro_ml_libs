@@ -18,7 +18,7 @@ $ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/maste
 $ bash install_jax_tigergpu.sh | tee jax.log
 ```
 
-For Traverse and Adroit, use `--cuda_compute_capabilities 7.0` instead of 6.0. You also may need to use different modules. On Adroit use `#SBATCH --gres=gpu:tesla_v100:1`. On Traverse it may be necessary to use stable releases instead of the master branch on github. JAX does not formally support the POWER architecture.
+For Traverse and Adroit, use `--cuda_compute_capabilities 7.0` instead of 6.0. You also may need to use different modules. On Traverse it may be necessary to use stable releases instead of the master branch on github. JAX does not formally support the POWER architecture.
 
 If you do a pip install instead of building from source on TigerGPU then you will encounter the following error when you try to import jax:
 
