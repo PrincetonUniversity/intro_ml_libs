@@ -94,7 +94,7 @@ export XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-10.2
 python mnist_classifier.py
 ```
 
-On adroit use `#SBATCH --gres=gpu:tesla_v100:1` and the modules used in `install_jax_adroitgpu.sh`. Submit the job with the following command:
+On adroit use the modules used in `install_jax_adroitgpu.sh`. Submit the job with the following command:
 
 ```
 $ sbatch job.slurm
