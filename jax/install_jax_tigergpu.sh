@@ -10,7 +10,7 @@ module load cudatoolkit/10.2 cudnn/cuda-10.2/7.6.5 rh/devtoolset/8
 python build/build.py --enable_cuda  \
                       --cudnn_path /usr/local/cudnn/cuda-10.2/7.6.5 \
                       --cuda_compute_capabilities 6.0 \
-                      --enable_march_native \
+                      --target_cpu_features native \
                       --enable_mkl_dnn
 pip install dist/*.whl
 pip install -e .
