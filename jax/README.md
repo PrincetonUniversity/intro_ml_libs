@@ -39,6 +39,12 @@ $ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/maste
 $ bash install_jax_traverse.sh | tee jax.log
 ```
 
+You will probably encounter the following error which suggests that the build system is hardcoded to make an x86_64 wheel:
+
+```
+ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel on this platform.
+```
+
 ### CPU-Only Version (Della, Perseus)
 
 Here are the installation directions for the CPU-only clusters:
