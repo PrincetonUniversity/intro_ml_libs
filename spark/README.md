@@ -51,7 +51,7 @@ $ cd /scratch/network/<YourNetID>  # /scratch/gpfs/ on other clusters
 $ git clone https://github.com/PrincetonUniversity/hpc_beginning_workshop
 $ cd hpc_beginning_workshop/RC_example_jobs/spark_big_data
 $ wget https://raw.githubusercontent.com/apache/spark/master/examples/src/main/python/pi.py
-$ sbatch job.slurm
+$ sbatch job.slurm  # edit email address
 ```
 
 ## Machine Learning
