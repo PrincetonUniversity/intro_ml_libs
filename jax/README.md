@@ -73,7 +73,7 @@ $ module load anaconda3/2020.11
 $ conda activate jax-gpu  # installation directions above
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ wget https://raw.githubusercontent.com/google/jax/master/examples/mnist_classifier.py
-$ wget <download_data.py>
+$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/download_data.py
 $ python download_data.py
 ```
 
