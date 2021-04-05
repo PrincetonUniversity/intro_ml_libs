@@ -58,7 +58,7 @@ $ sbatch job.slurm  # edit email address
 
 Spark ML is the machine learning component of Spark. The previous library was called mllib.
 
-The documentaion for the Python API with [Spark ML 2.4](https://spark.apache.org/docs/2.4.6/api/python/pyspark.ml.html) is here.
+The documentaion for the Python API of [Spark ML 2.4](https://spark.apache.org/docs/2.4.6/api/python/pyspark.ml.html) is here.
 
 The Spark 2.4 machine learning examples are here:
 
