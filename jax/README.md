@@ -79,12 +79,13 @@ $ ssh <YourNetID>@tigergpu.princeton.edu
 $ module load anaconda3/2020.11
 $ conda activate jax-gpu  # installation directions above
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
-$ wget https://raw.githubusercontent.com/google/jax/master/examples/mnist_classifier.py
+$ git clone https://github.com/google/jax
+$ cd jax/examples
 $ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/download_data.py
 $ python download_data.py
 ```
 
-The JAX source code needs to be modified so that it doesn't try to perform the download on the compute node. With the installation having been done in `~/software`, next you need to make the `mnist_raw()` function in `software/jax/examples/datasets.py` look like this:
+The JAX source code needs to be modified so that it doesn't try to perform the download on the compute node. Next, make the `mnist_raw()` function in `jax/examples/datasets.py` look like this:
 
 ```python
 #for filename in ["train-images-idx3-ubyte.gz", "train-labels-idx1-ubyte.gz",
@@ -97,6 +98,8 @@ The JAX source code needs to be modified so that it doesn't try to perform the d
   test_images = parse_images(path.join(_DATA, "t10k-images-idx3-ubyte.gz"))
   test_labels = parse_labels(path.join(_DATA, "t10k-labels-idx1-ubyte.gz"))
 ```
+
+Then change `from examples import datasets` in `mnist_classify.py` to `import datasets`.
 
 The Slurm script below (job.slurm) may be used on Tiger when JAX is built according to `install_jax_tigergpu.sh`:
 
@@ -111,14 +114,13 @@ The Slurm script below (job.slurm) may be used on Tiger when JAX is built accord
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2020.7 cudatoolkit/10.2 cudnn/cuda-10.2/7.6.5
+module load anaconda3/2020.11 cudatoolkit/11.0 cudnn/cuda-11.0/8.0.2
 conda activate jax-gpu
-export XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-10.2
 
 python mnist_classifier.py
 ```
 
-On adroit use the modules used in `install_jax_adroitgpu.sh`. Submit the job with the following command:
+Submit the job with the following command:
 
 ```
 $ sbatch job.slurm
