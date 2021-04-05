@@ -7,7 +7,9 @@ together for high-performance machine learning research.
 
 ## Installation
 
-### TigerGPU and Adroit (GPU)
+### TigerGPU
+
+Run these commands to install `jax`:
 
 ```
 $ module load anaconda3/2020.11
@@ -16,24 +18,7 @@ $ conda activate jax-gpu
 $ pip install jax jaxlib==0.1.64+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
 ```
 
-JAX must be built from source to use on the GPU clusters as [described here](https://jax.readthedocs.io/en/latest/developer.html). Below is the build procedure for TigerGPU (for Traverse and Adroit see notes below and use either `install_jax_traverse.sh` or `install_jax_adroit.sh`):
-
-```
-$ ssh <YourNetID>@tigergpu.princeton.edu
-$ cd software  # or another directory
-$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/install_jax_tigergpu.sh
-$ bash install_jax_tigergpu.sh | tee jax.log
-```
-
-For Traverse and Adroit, use `--cuda_compute_capabilities 7.0` instead of 6.0. You also may need to use different modules. On Traverse it may be necessary to use stable releases instead of the master branch on github. JAX does not formally support the POWER architecture.
-
-If you do a pip install instead of building from source on TigerGPU then you will encounter the following error when you try to import jax:
-
-```
-ImportError: /lib64/libm.so.6: version `GLIBC_2.23' not found
-```
-
-Follow the directions above to build from source.
+See the GPU example job below.
 
 ### Traverse
 
@@ -62,13 +47,6 @@ $ conda create --name jax-cpu --channel conda-forge --override-channels jax "lib
 ```
 
 See [this page](https://researchcomputing.princeton.edu/python) for Slurm scripts. Be sure to take advantage of the parallelism of the CPU version which uses MKL and OpenMP. For the MNIST example, one finds as `cpus-per-task` increases from 1, 2, 4, the run time decreases as 139 s, 87 s, 58 s.
-
-```
-$ cd /scratch/gpfs/<YourNetID>
-$ mkdir myjob && cd myjob
-$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/download_data.py
-$ python3 download_mnist.py
-```
 
 ## Example Job for GPU Version
 
