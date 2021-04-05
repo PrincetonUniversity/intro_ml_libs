@@ -6,7 +6,7 @@
 
 + Open a terminal (e.g., Terminal, PowerShell, PuTTY) [<a href="https://researchcomputing.princeton.edu/education/training/hardware-and-software-requirements-picscie-workshops" target="_blank">click here</a> for help]
 
-+ Please SSH to Adroit in a terminal: `ssh <YourNetID>@adroit.princeton.edu` [click [here](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu) for help]. If you have an account on TigerGPU or Traverse then you may use that if the queue is not long.
++ Please SSH to Adroit in the terminal: `ssh <YourNetID>@adroit.princeton.edu` [click [here](https://researchcomputing.princeton.edu/faq/why-cant-i-login-to-a-clu) for help]. If you have an account on TigerGPU or Traverse then you may use that if the queue is not long.
 
 + If you are new to Linux then consider using the MyAdroit web portal (VPN required): [https://myadroit.princeton.edu](https://myadroit.princeton.edu)
 
