@@ -9,6 +9,13 @@ together for high-performance machine learning research.
 
 ### TigerGPU and Adroit (GPU)
 
+```
+$ module load anaconda3/2020.11
+$ conda create --name jax-gpu python=3.8 matplotlib
+$ conda activate jax-gpu
+$ pip install jax jaxlib==0.1.64+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
+```
+
 JAX must be built from source to use on the GPU clusters as [described here](https://jax.readthedocs.io/en/latest/developer.html). Below is the build procedure for TigerGPU (for Traverse and Adroit see notes below and use either `install_jax_traverse.sh` or `install_jax_adroit.sh`):
 
 ```
