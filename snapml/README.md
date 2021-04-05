@@ -17,7 +17,7 @@ See the [documentation](https://ibmsoe.github.io/snap-ml-doc/v1.6.0/index.html) 
 `pai4sk` is an interface that provides the full functionality of sklearn (for what it supports):
 
 ```
-$ module load anaconda3/2020.7
+$ module load anaconda3/2020.11
 $ CHNL="https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda"
 $ conda create --name pai4sk-env --channel ${CHNL} pai4sk scikit-learn
 ```
@@ -25,7 +25,7 @@ $ conda create --name pai4sk-env --channel ${CHNL} pai4sk scikit-learn
 One can also install only `snapml`:
 
 ```
-$ module load anaconda3/2020.7
+$ module load anaconda3/2020.11
 $ CHNL="https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda-early-access"
 $ conda create --name snap-env --channel ${CHNL} snapml scikit-learn
 ```
@@ -35,7 +35,7 @@ $ conda create --name snap-env --channel ${CHNL} snapml scikit-learn
 Only the Spark interface is available for the `x86_64` architecture:
 
 ```
-$ module load anaconda3/2020.7
+$ module load anaconda3/2020.11
 $ CHNL="https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda"
 $ conda create --name snap-env --channel ${CHML} snapml-spark
 ```
@@ -80,7 +80,7 @@ Below is the corresponding Slurm script:
 #SBATCH --gres=gpu:1             # number of gpus per node
 
 module purge
-module load anaconda3/2020.7
+module load anaconda3/2020.11
 conda activate pai4sk-env
 
 python myscript.py
