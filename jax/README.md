@@ -63,7 +63,7 @@ See [this page](https://researchcomputing.princeton.edu/python) for Slurm script
 
 ## Example Job for GPU Version
 
-First obtain the JAX script. Also, the compute nodes do not have internet access so we have to download the data on the head node:
+Run the commands below to submit the test job. Recall that the compute nodes do not have internet access so we have to download the data on the head node in advance.
 
 ```bash
 $ ssh <YourNetID>@tigergpu.princeton.edu
@@ -76,7 +76,7 @@ $ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/maste
 $ python download_data.py
 ```
 
-The JAX source code needs to be modified so that it doesn't try to perform the download on the compute node. Next, make the `mnist_raw()` function in `jax/examples/datasets.py` look like this:
+Two files need to be modified. First, make the `mnist_raw()` function in `jax/examples/datasets.py` look like this:
 
 ```python
 #for filename in ["train-images-idx3-ubyte.gz", "train-labels-idx1-ubyte.gz",
@@ -90,9 +90,9 @@ The JAX source code needs to be modified so that it doesn't try to perform the d
   test_labels = parse_labels(path.join(_DATA, "t10k-labels-idx1-ubyte.gz"))
 ```
 
-Then change `from examples import datasets` in `mnist_classify.py` to `import datasets`.
+Second, change `from examples import datasets` in `mnist_classify.py` to `import datasets`.
 
-The Slurm script below (job.slurm) may be used on Tiger when JAX is built according to `install_jax_tigergpu.sh`:
+The Slurm script below (job.slurm) may be used on Tiger -- different modules are needed for Adroit:
 
 ```bash
 #!/bin/bash
