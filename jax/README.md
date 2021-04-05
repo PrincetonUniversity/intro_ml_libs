@@ -7,7 +7,7 @@ together for high-performance machine learning research.
 
 ## Installation
 
-### GPU Version (TigerGPU, Traverse, Adroit)
+### TigerGPU and Adroit (GPU)
 
 JAX must be built from source to use on the GPU clusters as [described here](https://jax.readthedocs.io/en/latest/developer.html). Below is the build procedure for TigerGPU (for Traverse and Adroit see notes below and use either `install_jax_traverse.sh` or `install_jax_adroit.sh`):
 
@@ -27,6 +27,17 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.23' not found
 ```
 
 Follow the directions above to build from source.
+
+### Traverse
+
+JAX is not supported on the POWER architecture. In the past we have found it to install and run successfully but this is no longer the case. You can try the build script if you like:
+
+```
+$ ssh <YourNetID>@traverse.princeton.edu
+$ cd software  # or another directory
+$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/install_jax_traverse.sh
+$ bash install_jax_traverse.sh | tee jax.log
+```
 
 ### CPU-Only Version (Della, Perseus)
 
