@@ -18,7 +18,20 @@ $ conda activate jax-gpu
 $ pip install jax jaxlib==0.1.64+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
 ```
 
-See the GPU example job below.
+See the GPU example job below. The correct environment modules to use in the Slurm script are `cudatoolkit/11.0` and `cudnn/cuda-11.0/8.0.2`.
+
+### Adroit (GPU)
+
+Run these commands to install `jax`:
+
+```
+$ module load anaconda3/2020.11
+$ conda create --name jax-gpu python=3.8 matplotlib
+$ conda activate jax-gpu
+$ pip install jax jaxlib==0.1.64+cuda102 -f https://storage.googleapis.com/jax-releases/jax_releases.html
+```
+
+See the GPU example job below. The correct environment modules to use in the Slurm script are `cudatoolkit/10.2` and `cudnn/cuda-10.1/7.6.3`.
 
 ### Traverse
 
@@ -31,7 +44,7 @@ $ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/maste
 $ bash install_jax_traverse.sh | tee jax.log
 ```
 
-You will probably encounter the following error which suggests that the build system is hardcoded to make an x86_64 wheel:
+You will probably encounter the following error which arises because the build system produces an x86_64 wheel:
 
 ```
 ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel on this platform.
