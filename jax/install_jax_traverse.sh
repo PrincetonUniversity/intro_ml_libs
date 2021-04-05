@@ -5,17 +5,23 @@
 
 module purge
 module load anaconda3/2020.11
-conda create --name jax-gpu python=3.8 numpy scipy cython six -y
+conda create --name jax-gpu python=3.7 numpy scipy six wheel -y
 conda activate jax-gpu
+
+export TMP=/tmp
 
 git clone https://github.com/google/jax
 cd jax
-module load cudatoolkit/11.0 cudnn/cuda-11.0/8.0.1
+module load cudatoolkit/11.1 cudnn/cuda-11.1/8.0.4
+
+# install jaxlib
 python build/build.py --enable_cuda \
-                      --cudnn_path /usr/local/cudnn/cuda-11.0/8.0.1 \
-                      --noenable_march_native \
+                      --cuda_path /usr/local/cuda-11.1 \
+                      --cudnn_path /usr/local/cudnn/cuda-11.1/8.0.4 \
                       --noenable_mkl_dnn \
                       --cuda_compute_capabilities 7.0 \
                       --bazel_path /usr/bin/bazel
 pip install dist/*.whl
+
+# install jax
 pip install -e .
