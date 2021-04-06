@@ -57,17 +57,35 @@ The script took 16 minutes to run and required 3 GB of memory.
 
 ## Flux with GPUs
 
-First we need to add the packages:
+Let's train a [CNN on MNIST](https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl). First we need to add the packages:
 
 ```bash
 # ssh adroit
 $ module load julia/1.5.0 cudatoolkit/11.0 cudnn/cuda-11.0/8.0.2
 $ julia
 julia> ]
-(v1.2) pkg> add Flux, Zygote, Metalhead, Images, CUDA
+(v1.5) pkg> add Flux, CUDA, TensorBoardLogger, ProgressMeter, BSON, MLDatasets
 $ # press the backspace or delete key
 julia> exit()
 ```
+
+Next download the data on the head node:
+
+```
+$ julia
+julia> using MLDatasets
+julia> MLDatasets.FashionMNIST.download()
+julia> exit()
+```
+
+Download the script and submit the job:
+
+```
+$ cd intro_machine_learning_libs/julia/flux_gpu
+$ wget https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl
+$ sbatch job.slurm  # edit your email address
+```
+
 
 Next download the script and the data:
 
