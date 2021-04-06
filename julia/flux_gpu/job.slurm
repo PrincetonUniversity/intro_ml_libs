@@ -10,4 +10,4 @@
 module purge
 module load julia/1.5.0 cudatoolkit/11.0 cudnn/cuda-11.0/8.0.2
 
-julia ../60-minute-blitz.jl
+julia conv_mnist.jl
