@@ -12,7 +12,7 @@ To learn about [Flux](https://fluxml.ai/Flux.jl/stable/) see this [60-minute bli
 
 ### Flux Example Job with GPUs
 
-Let's train a [CNN on MNIST](https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl). First we need to add the packages and download the data while on the login node:
+Let's train a CNN on MNIST using this [Julia script](https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl). First we need to add the packages and download the data while on the login node:
 
 ```bash
 $ ssh <YourNetID>@adroit.princeton.edu
@@ -22,7 +22,7 @@ julia> ]
 (v1.5) pkg> add Flux, CUDA, TensorBoardLogger, ProgressMeter, BSON, MLDatasets
 $ # press the backspace or delete key
 julia> using MLDatasets
-julia> MLDatasets.FashionMNIST.download()
+julia> MLDatasets.MNIST.download()
 julia> exit()
 ```
 
