@@ -81,6 +81,22 @@ julia> exit()
 $ sbatch job.slurm
 ```
 
+You many find the following harmless messages from the package manager calling curl from the compute nodes which do not have internet access:
+
+```
+curl: (6) Could not resolve host: pkg.julialang.org; Unknown error
+
+curl: (6) Could not resolve host: github.com; Unknown error
+
+curl: (6) Could not resolve host: pkg.julialang.org; Unknown error
+
+curl: (6) Could not resolve host: github.com; Unknown error
+
+curl: (6) Could not resolve host: pkg.julialang.org; Unknown error
+
+curl: (6) Could not resolve host: github.com; Unknown error
+```
+
 You may find that the Julia script still tries to download the data on the compute node which will fail.
 
 ## Knet
