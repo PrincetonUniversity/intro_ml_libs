@@ -30,7 +30,7 @@ Download the Julia script and submit the job:
 
 ```
 $ cd intro_machine_learning_libs/julia/flux_gpu
-$ wget https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl
+$ wget https://raw.githubusercontent.com/FluxML/model-zoo/master/vision/conv_mnist/conv_mnist.jl
 $ sbatch job.slurm
 ```
 
