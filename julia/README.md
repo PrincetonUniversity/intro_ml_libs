@@ -8,7 +8,7 @@ Two popular deep learning packages for Julia are Flux and Knet.
 
 ## Flux
 
-To learn about [Flux](https://fluxml.ai/Flux.jl/stable/) see this [60-minute blitz](https://github.com/FluxML/model-zoo/blob/master/tutorials/60-minute-blitz/60-minute-blitz.jl) and [Flux Model Zoo](https://github.com/FluxML/model-zoo/).
+To learn about [Flux](https://fluxml.ai/Flux.jl/stable/) see this [60-minute blitz](https://github.com/FluxML/model-zoo/blob/master/tutorials/60-minute-blitz/60-minute-blitz.jl) and the [Flux Model Zoo](https://github.com/FluxML/model-zoo/).
 
 ### Flux Example Job with GPUs
 
