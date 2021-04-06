@@ -22,7 +22,7 @@ julia> ]
 (v1.5) pkg> add Flux, CUDA, TensorBoardLogger, ProgressMeter, BSON, MLDatasets
 $ # press the backspace or delete key
 julia> using MLDatasets
-julia> MLDatasets.MNIST.download()
+julia> MLDatasets.MNIST.download()  # answer y when prompted
 julia> exit()
 ```
 
