@@ -57,48 +57,43 @@ The script took 16 minutes to run and required 3 GB of memory.
 
 ## Flux with GPUs
 
-Let's train a [CNN on MNIST](https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl). First we need to add the packages:
+Let's train a [CNN on MNIST](https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl). First we need to add the packages and download the data while on the login node:
 
 ```bash
-# ssh adroit
+$ ssh <YourNetID>@adroit.princeton.edu
 $ module load julia/1.5.0 cudatoolkit/11.0 cudnn/cuda-11.0/8.0.2
 $ julia
 julia> ]
 (v1.5) pkg> add Flux, CUDA, TensorBoardLogger, ProgressMeter, BSON, MLDatasets
 $ # press the backspace or delete key
-julia> exit()
-```
-
-Next download the data on the head node:
-
-```
-$ julia
 julia> using MLDatasets
 julia> MLDatasets.FashionMNIST.download()
 julia> exit()
 ```
 
-Download the script and submit the job:
+Download the Julia script and submit the job:
 
 ```
 $ cd intro_machine_learning_libs/julia/flux_gpu
 $ wget https://github.com/FluxML/model-zoo/blob/master/vision/conv_mnist/conv_mnist.jl
-$ sbatch job.slurm  # edit your email address
+$ sbatch job.slurm
 ```
 
+The GPU usage is found to be fairly good fluctuating around 40-50%. The end of the output is:
 
-Next download the script and the data:
-
-```bash
-$ cd intro_machine_learning_libs/julia/flux_gpu
-$ wget https://raw.githubusercontent.com/FluxML/model-zoo/master/tutorials/60-minute-blitz.jl
-# comment out line 287 since we already downloaded the images, i.e.,  #Metalhead.download(CIFAR10)
-# uncomment line 282 to use the GPU, i.e., CUDA
-$ julia
-julia> using Metalhead
-julia> Metalhead.download(CIFAR10)  # download data since no internet access on compute nodes
-julia> exit()
-$ sbatch job.slurm
+```
+[ Info: Model saved in "runs/model.bson"
+Epoch: 0   Train: (loss = 2.3053f0, acc = 11.0917)   Test: (loss = 2.3057f0, acc = 11.28)
+Epoch: 1   Train: (loss = 0.1958f0, acc = 94.1)   Test: (loss = 0.1811f0, acc = 94.77)
+Epoch: 2   Train: (loss = 0.1181f0, acc = 96.4283)   Test: (loss = 0.1097f0, acc = 96.67)
+Epoch: 3   Train: (loss = 0.0892f0, acc = 97.2483)   Test: (loss = 0.0846f0, acc = 97.43)
+Epoch: 4   Train: (loss = 0.0735f0, acc = 97.7817)   Test: (loss = 0.0677f0, acc = 97.83)
+Epoch: 5   Train: (loss = 0.0635f0, acc = 98.01)   Test: (loss = 0.0606f0, acc = 97.99)
+Epoch: 6   Train: (loss = 0.0568f0, acc = 98.2433)   Test: (loss = 0.0552f0, acc = 98.19)
+Epoch: 7   Train: (loss = 0.0503f0, acc = 98.4367)   Test: (loss = 0.0507f0, acc = 98.38)
+Epoch: 8   Train: (loss = 0.0417f0, acc = 98.6967)   Test: (loss = 0.0444f0, acc = 98.58)
+Epoch: 9   Train: (loss = 0.0436f0, acc = 98.595)   Test: (loss = 0.0471f0, acc = 98.41)
+Epoch: 10   Train: (loss = 0.0363f0, acc = 98.905)   Test: (loss = 0.0408f0, acc = 98.7)
 ```
 
 You many find the following harmless messages from the package manager calling curl from the compute nodes which do not have internet access:
