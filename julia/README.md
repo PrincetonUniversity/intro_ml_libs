@@ -6,9 +6,11 @@ According to the [Julia](https://docs.julialang.org/en/v1/) website:
 
 Two popular machine learning packages for Julia are Flux and Knet.
 
+Check out the [Flux Model Zoo](https://github.com/FluxML/model-zoo/).
+
 ## Flux with CPUs
 
-Here is a 60-minute [introduction](https://github.com/FluxML/model-zoo/blob/master/tutorials/60-minute-blitz.jl) to Flux.
+Here is a 60-minute [introduction](https://github.com/FluxML/model-zoo/blob/master/tutorials/60-minute-blitz/60-minute-blitz.jl) to Flux.
 
 ```bash
 $ ssh adroit
