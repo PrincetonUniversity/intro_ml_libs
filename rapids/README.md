@@ -18,7 +18,7 @@
 
 ## Installation
 
-### Adroit or Tiger
+### Tiger or Adroit (GPU)
 
 Install `cuml` and its dependencies `cudf` and `dask-cudf`:
 
