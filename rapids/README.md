@@ -55,7 +55,7 @@ There are also dask-based packages available like `dask-cudf`. To see all the pa
 
 ## Using cuDF
 
-See this [guide](https://docs.rapids.ai/api/cudf/stable/) for a 10-minute introduction to `cuDF` and `Dask-cuDF`.
+See this [guide](https://docs.rapids.ai/api/cudf/stable/10min.html) for a 10-minute introduction to `cuDF` and `Dask-cuDF`.
 
 Note that Rapids requires a GPU with compute capability (CC) of 6.0 and greater. This means the K40c GPUs on `adroit-h11g4` cannot be used (they are CC 3.5). On Adroit we mut request a V100 GPU (CC 7.0). TigerGPU is CC 6.0.
 
