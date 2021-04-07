@@ -51,7 +51,7 @@ $ conda create --name rapids-env --channel ${CHNL} cudf cuml
 # accept the license agreement
 ```
 
-There are also dask-based packages available like dask-cudf.
+There are also dask-based packages available like `dask-cudf`. To see all the packages point your browser to `https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda`.
 
 ## Using cuDF
 
