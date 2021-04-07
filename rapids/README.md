@@ -36,7 +36,7 @@ $ module load anaconda3/2020.11
 $ conda create -n rapids-0.18 -c rapidsai -c nvidia -c conda-forge -c defaults rapids=0.18 python=3.8 cudatoolkit=11.0
 ```
 
-There is also a container [here](https://hub.docker.com/r/rapidsai/rapidsai/).
+There is also a container [here](https://hub.docker.com/r/rapidsai/rapidsai/) which can be used on our systems with (Singularity)[https://researchcomputing.princeton.edu/support/knowledge-base/singularity].
 
 
 ### Traverse
