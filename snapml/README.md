@@ -88,7 +88,7 @@ python myscript.py
 
 ## Notes
 
-When trying to do the `iris` dataset instead of `load_breast_cancer`:
+When trying to do the `load_iris` instead of `load_breast_cancer`:
 
 ```
 ValueError: Multiclass classification not supported for decision tree classifiers.
