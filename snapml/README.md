@@ -61,7 +61,7 @@ acc = metrics.accuracy_score(y_test, y_pred)
 print(f"Accuracy = {100 * acc:.1f}%")
 ```
 
-The output of the code is:
+The output of the code should show high accuracy:
 
 ```
 Accuracy = 95.6%
