@@ -55,6 +55,8 @@ You many find harmless messages like `curl: (6) Could not resolve host: pkg.juli
 
 ## Knet
 
+Knet is a deep learning framework implemented in Julia. It supports GPU operation and automatic differentiation using dynamic computational graphs for models defined in plain Julia.
+
 [Knet documentation](https://denizyuret.github.io/Knet.jl/latest/)  
 [Knet on GitHub](https://github.com/denizyuret/Knet.jl) 
 
