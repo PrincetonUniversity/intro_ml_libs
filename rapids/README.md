@@ -57,14 +57,12 @@ There are also dask-based packages available like `dask-cudf`. To see all the pa
 
 See this [guide](https://docs.rapids.ai/api/cudf/stable/10min.html) for a 10-minute introduction to `cuDF` and `Dask-cuDF`.
 
-Note that Rapids requires a GPU with compute capability (CC) of 6.0 and greater. This means the K40c GPUs on `adroit-h11g4` cannot be used (they are CC 3.5). On Adroit we mut request a V100 GPU (CC 7.0). TigerGPU is CC 6.0.
-
 Below is a simple interactive session on Adroit checking the installation:
 
 ```bash
-$ salloc -N 1 -n 1 -t 5 --gres=gpu:tesla_v100:1
+$ salloc -N 1 -n 1 -t 5 --gres=gpu:1
 $ module load anaconda3/2020.11
-$ conda activate rapids-0.16
+$ conda activate rapids-0.18
 $ python
 >>> import cudf
 >>> s = cudf.Series([1, 2, 3, None, 4])
@@ -78,9 +76,6 @@ dtype: int64
 >>> exit()
 $ exit
 ```
-
-Use `#SBATCH --gres=gpu:tesla_v100:1` on Adroit and `#SBATCH --gres=gpu:1` on Tiger.
-
 
 Submitting a job to the Slurm scheduler:
 
@@ -96,7 +91,7 @@ Submitting a job to the Slurm scheduler:
 
 module purge
 module load anaconda3/2020.11
-conda activate rapids-0.16
+conda activate rapids-0.18
 
 python rapids.py
 ```
@@ -144,7 +139,7 @@ Below is an appropriate Slurm script:
 
 module purge
 module load anaconda3/2020.11
-conda activate rapids-0.16
+conda activate rapids-0.18
 
 python rapids.py
 ```
