@@ -25,7 +25,7 @@ Install `cuml` and its dependencies `cudf` and `dask-cudf`:
 ```bash
 # for live workshop ~/.condarc should be directing the install to /scratch/network or /scratch/gpfs
 $ module load anaconda3/2020.11
-$ conda create -n rapids-0.16 -c rapidsai -c nvidia -c conda-forge -c defaults cuml=0.16 python=3.8 cudatoolkit=10.2
+$ conda create -n rapids-0.18 -c rapidsai -c nvidia -c conda-forge -c defaults cuml=0.18 python=3.8 cudatoolkit=11.0
 ```
 
 Or install all components of Rapids:
@@ -33,7 +33,7 @@ Or install all components of Rapids:
 ```bash
 # for live workshop ~/.condarc should be directing the install to /scratch/network or /scratch/gpfs
 $ module load anaconda3/2020.11
-$ conda create -n rapids-0.16 -c rapidsai -c nvidia -c conda-forge -c defaults rapids=0.16 python=3.8 cudatoolkit=10.2
+$ conda create -n rapids-0.18 -c rapidsai -c nvidia -c conda-forge -c defaults rapids=0.18 python=3.8 cudatoolkit=11.0
 ```
 
 There is also a container [here](https://hub.docker.com/r/rapidsai/rapidsai/).
