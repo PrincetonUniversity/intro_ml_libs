@@ -31,7 +31,7 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ```
 -->
 
-## Workshop Survey
+## Workshop Survey and Screenshots
 [Click here](http://bit.ly/picscie_wkshp_survey_spring2021)
 
 <!--
