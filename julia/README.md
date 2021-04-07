@@ -60,7 +60,7 @@ You many find harmless messages like `curl: (6) Could not resolve host: pkg.juli
 
 ## TensorFlow
 
-There is a Julia package called [TensorFlow.jl](https://github.com/malmaud/TensorFlow.jl) that provides an interface to TensorFlow. It can be used with up to version 1.12 of TensorFlow. It appears that the number of commits is decreasing with time on this repo.
+There is a Julia package called [TensorFlow.jl](https://github.com/malmaud/TensorFlow.jl) that provides an interface to TensorFlow. It can be only be used with older versions of TensorFlow. The authors of this package recommend using Flux.
 
 ## Conventional Models
 
