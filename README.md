@@ -31,6 +31,11 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ```
 -->
 
+## NVIDIA GPU Hackathon at Princeton
+
+Dates: June 2, 8-10  
+[Become a mentor](https://bit.ly/PU_becomeGPUmentor)
+
 ## Workshop Survey and Screenshots
 [Click here](http://bit.ly/picscie_wkshp_survey_spring2021)
 
