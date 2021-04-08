@@ -3,7 +3,12 @@
 <img src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png" alt="logo"></img>
 
 [JAX](https://github.com/google/jax) is [Autograd](https://github.com/hips/autograd) and [XLA](https://www.tensorflow.org/xla), brought
-together for high-performance machine learning research.
+together for high-performance machine learning research. JAX can be used for:
+
+- automatic differentiation of Python and NumPy functions (more general then TensorFlow)
+- a good choice for non-conventional neural network architectures
+- accelerating code using a JIT
+- carrying out computations using multiple GPUs/TPUs
 
 ## Installation
 
