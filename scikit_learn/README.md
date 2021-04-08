@@ -16,7 +16,7 @@ For an introduction to machine learning and Scikit-learn see this GitHub [repo a
 
 Scikit-learn is pre-installed as part of the Anaconda Python disribution:
 
-```python
+```
 $ module load anaconda3/2020.11
 (base) $ python
 >>> import sklearn
