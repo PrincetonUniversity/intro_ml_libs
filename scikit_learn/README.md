@@ -62,7 +62,7 @@ Below is an appropriate Slurm script for a Scikit-learn job that takes advantage
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
-module load anaconda3/2020.7
+module load anaconda3/2020.11
 conda activate sklearn-env
 
 python myscript.py
