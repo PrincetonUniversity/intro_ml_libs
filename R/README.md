@@ -77,10 +77,37 @@ We see that serial training requires 103 seconds while when four CPU-cores are u
 
 The `xgboost` package is [available](https://xgboost.readthedocs.io/en/latest/R-package/index.html) for R. It can be used on [GPUs](https://xgboost.readthedocs.io/en/latest/build.html#installing-r-package-with-gpu-support).
 
-## R and Deep Learning
+## R Interface to TensorFlow
 
-[R Interface to TensorFlow](https://tensorflow.rstudio.com/)
+See an overview of the procedure here: [R Interface to TensorFlow](https://tensorflow.rstudio.com/). Below are directions for getting this work on Adroit:
 
-[MXNet](https://mxnet.apache.org/api/r)
- >  MXNet supports the R programming language. The MXNet R package brings flexible and efficient GPU computing and state-of-art deep learning to R. It enables you to write seamless tensor/matrix computation with multiple GPUs in R. It also lets you construct and customize the state-of-art deep learning models in R, and apply them to tasks, such as image classification and data science challenges.
+```
+ssh adroit
+module load anaconda3
+pip install --user virtualenv
+cd software
+mkdir R-tf2-env
+virtualenv R-tf2-env
+source R-tf2-env/bin/activate
+pip install tensorflow-gpu h5py pyyaml requests Pillow scipy
+deactivate
+
+module load rh/devtoolset/8
+R
+install.packages("tensorflow")
+install.packages("keras")
+```
+
+Start of main.R will look like:
+
+```
+library(tensorflow)
+use_python("/home/aturing/software/R-tf2-env/bin/python")
+use_virtualenv("/home/aturing/software/R-tf2-env")
+library(keras)
+```
+
+## MXNet
+
+ >  [MXNet](https://mxnet.apache.org/api/r) supports the R programming language. The MXNet R package brings flexible and efficient GPU computing and state-of-art deep learning to R. It enables you to write seamless tensor/matrix computation with multiple GPUs in R. It also lets you construct and customize the state-of-art deep learning models in R, and apply them to tasks, such as image classification and data science challenges.
 
