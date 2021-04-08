@@ -4,7 +4,7 @@ See [this page](https://cran.r-project.org/web/views/MachineLearning.html) for a
 
 ## Caret
 
-Install the needed packages:
+The Caret package provides many ML models with the ability to train in parallel. In the example below we show how to train an RF model in parallel. Begin by installing the needed packages:
 
 ```
 $ ssh <YourNetID>@adroit.princeton.edu
