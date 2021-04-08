@@ -39,7 +39,8 @@ Dates: June 2, 8-10
 ## New GPU Nodes
 
 Della with soon have 20 nodes with 2 [A100](https://www.nvidia.com/en-us/data-center/a100/) GPUs per node.  
-TigerGPU will hopefully be replaced in the Fall.
+TigerGPU will hopefully be replaced in the Fall.  
+AMD GPU node coming to Adroit in the coming weeks.
 
 ## Workshop Survey and Screenshots
 [Click here](http://bit.ly/picscie_wkshp_survey_spring2021)
