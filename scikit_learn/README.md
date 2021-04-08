@@ -27,7 +27,7 @@ $ module load anaconda3/2020.11
 If you need additional packages that are not found in the Anaconda distribution then make your own Conda environment:
 
 ```
-$ module load anaconda3/2020.7
+$ module load anaconda3/2020.11
 $ conda create --name sklearn-env --channel <some-channel> scikit-learn pandas matplotlib <another-package>
 ```
 
