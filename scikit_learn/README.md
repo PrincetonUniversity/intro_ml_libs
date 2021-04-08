@@ -16,7 +16,7 @@ For an introduction to machine learning and Scikit-learn see this GitHub [repo a
 
 Scikit-learn is pre-installed as part of the Anaconda Python disribution:
 
-```
+```python
 $ module load anaconda3/2020.11
 (base) $ python
 >>> import sklearn
@@ -26,7 +26,7 @@ $ module load anaconda3/2020.11
 
 If you need additional packages that are not found in the Anaconda distribution then make your own Conda environment:
 
-```
+```bash
 $ module load anaconda3/2020.11
 $ conda create --name sklearn-env --channel <some-channel> scikit-learn pandas matplotlib <another-package>
 ```
@@ -37,7 +37,7 @@ See [this page](https://researchcomputing.princeton.edu/python) for more on crea
 
 Intel provides their own distribution of Python as well as acceleration libraries for Scikit-learn such as [DAAL](https://software.intel.com/content/www/us/en/develop/tools/data-analytics-acceleration-library.html). You may consider creating your Scikit-learn environment using packages from the `intel` channel:
 
-```
+```bash
 $ module load anaconda3/2020.11
 $ conda create --name sklearn-env --channel intel scikit-learn pandas matplotlib
 ```
@@ -48,7 +48,7 @@ Scikit-learn depends on the `intel-openmp` package which enabling multithreading
 
 Below is an appropriate Slurm script for a Scikit-learn job that takes advantage of multithreading:
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=sklearn       # create a short name for your job
 #SBATCH --nodes=1                # node count
