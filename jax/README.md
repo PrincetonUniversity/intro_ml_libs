@@ -6,7 +6,7 @@
 together for high-performance machine learning research. JAX can be used for:
 
 - automatic differentiation of Python and NumPy functions (more general then TensorFlow)
-- a good choice for non-conventional neural network architectures
+- a good choice for non-conventional neural network architectures and loss functions
 - accelerating code using a JIT
 - carrying out computations using multiple GPUs/TPUs
 
