@@ -43,7 +43,7 @@ TigerGPU will hopefully be replaced in the Fall.
 AMD GPU node coming to Adroit in the coming weeks.
 
 ## Workshop Survey and Screenshots
-[Click here](http://bit.ly/picscie_wkshp_survey_spring2021)
+[Start Survey](http://bit.ly/picscie_wkshp_survey_spring2021)
 
 <!--
 ## Attendance Sheet
