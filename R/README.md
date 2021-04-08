@@ -94,8 +94,8 @@ $ deactivate
 
 $ module load rh/devtoolset/8
 $ R
-$ install.packages("tensorflow")
-$ install.packages("keras")
+> install.packages("tensorflow")
+> install.packages("keras")
 ```
 
 This was worked out in CSES ticket 32139.
