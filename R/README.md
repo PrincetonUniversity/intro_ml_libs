@@ -82,21 +82,23 @@ The `xgboost` package is [available](https://xgboost.readthedocs.io/en/latest/R-
 See an overview of the procedure here: [R Interface to TensorFlow](https://tensorflow.rstudio.com/). Below are directions for getting this work on Adroit:
 
 ```
-ssh adroit
-module load anaconda3
-pip install --user virtualenv
-cd software
-mkdir R-tf2-env
-virtualenv R-tf2-env
-source R-tf2-env/bin/activate
-pip install tensorflow-gpu h5py pyyaml requests Pillow scipy
-deactivate
+$ ssh adroit
+$ module load anaconda3
+$ pip install --user virtualenv
+$ cd software
+$ mkdir R-tf2-env
+$ virtualenv R-tf2-env
+$ source R-tf2-env/bin/activate
+$ pip install tensorflow-gpu h5py pyyaml requests Pillow scipy
+$ deactivate
 
-module load rh/devtoolset/8
-R
-install.packages("tensorflow")
-install.packages("keras")
+$ module load rh/devtoolset/8
+$ R
+$ install.packages("tensorflow")
+$ install.packages("keras")
 ```
+
+This was worked out in CSES ticket 32139.
 
 Start of main.R will look like:
 
