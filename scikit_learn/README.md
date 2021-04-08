@@ -38,7 +38,7 @@ See [this page](https://researchcomputing.princeton.edu/python) for more on crea
 Intel provides their own distribution of Python as well as acceleration libraries for Scikit-learn such as [DAAL](https://software.intel.com/content/www/us/en/develop/tools/data-analytics-acceleration-library.html). You may consider creating your Scikit-learn environment using packages from the `intel` channel:
 
 ```
-$ module load anaconda3/2020.7
+$ module load anaconda3/2020.11
 $ conda create --name sklearn-env --channel intel scikit-learn pandas matplotlib
 ```
 
