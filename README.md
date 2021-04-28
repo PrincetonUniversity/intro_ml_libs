@@ -6,7 +6,7 @@ This workshop provides demonstrations of the effective usage of popular machine 
 
 ## Announcements
 
-### AI for Science Bootcamp, by NVIDIA
+#### AI for Science Bootcamp, by NVIDIA
 Tue May 18, 9am-12:30pm & Wed May 19, 9am-12:30pm  
 Virtual workshop (Zoom link will be emailed to accepted participants)  
 [Registration is required](https://researchcomputing.princeton.edu/events/2021/ai-science-bootcamp-nvidia)
@@ -33,12 +33,12 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ```
 -->
 
-### NVIDIA GPU Hackathon at Princeton
+#### NVIDIA GPU Hackathon at Princeton
 
 Dates: June 2, 8-10  
 [Become a mentor](https://bit.ly/PU_becomeGPUmentor)
 
-### New GPU Nodes
+#### New GPU Nodes
 
 Della will soon have 20 nodes with 2 [A100](https://www.nvidia.com/en-us/data-center/a100/) GPUs per node.  
 TigerGPU will hopefully be replaced in the Fall.  
