@@ -20,7 +20,7 @@ Run these commands to install `jax`:
 $ module load anaconda3/2020.11
 $ conda create --name jax-gpu python=3.8 matplotlib
 $ conda activate jax-gpu
-$ pip install jax jaxlib==0.1.64+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
+$ pip install jax jaxlib==0.1.67+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
 ```
 
 See the GPU example job below. The correct environment modules to use in the Slurm script are `cudatoolkit/11.0` and `cudnn/cuda-11.0/8.0.2`.
