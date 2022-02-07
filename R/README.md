@@ -8,7 +8,6 @@ The Caret package provides many ML models with the ability to train in parallel.
 
 ```
 $ ssh <YourNetID>@adroit.princeton.edu
-$ module load rh/devtoolset/8
 $ R
 > install.packages(c("caret", "doParallel"))
 > q()
