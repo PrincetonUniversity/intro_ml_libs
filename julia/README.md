@@ -53,6 +53,14 @@ Epoch: 10   Train: (loss = 0.0363f0, acc = 98.905)   Test: (loss = 0.0408f0, acc
 
 You many find harmless messages like `curl: (6) Could not resolve host: pkg.julialang.org; Unknown error` in the output which arise from the package manager calling curl from the compute nodes which do not have internet access.
 
+#### Della
+
+The procedure above can be used on Della (GPU) with the following modications:
+- `ssh <YourNetID>@della-gpu.princeton.edu`
+- `module load julia/1.7.1 cudatoolkit/11.6 cudnn/cuda-11.x/8.2.0`
+- Run the job on the login node before submitting with sbatch since it needs to download additional software: `$ julia conv_mnist.jl`
+- Then do a full production run by increasing epochs and use sbatch: `$ sbatch job.slurm`
+
 ## Knet
 
 Knet is a deep learning framework implemented in Julia. It supports GPU operation and automatic differentiation using dynamic computational graphs for models defined in plain Julia.
