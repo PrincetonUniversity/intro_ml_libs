@@ -277,7 +277,8 @@ sparkR.session.stop()
 
 Run the commands below to prepare the input files:
 
-```
+```bash
+$ mkdir R_example && cd R_example
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml/randomForest.R .
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_libsvm_data.txt .
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_linear_regression_data.txt .
