@@ -232,6 +232,77 @@ RandomForestClassificationModel: uid=RandomForestClassifier_a139e7bca298, numTre
 
 See this directory for examples: `/usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml`
 
+Here is the random forest example:
+
+```
+library(SparkR)
+
+# Initialize SparkSession
+sparkR.session(appName = "SparkR-ML-randomForest-example")
+
+# Random forest classification model
+
+# $example on:classification$
+# Load training data
+df <- read.df("data/mllib/sample_libsvm_data.txt", source = "libsvm")
+training <- df
+test <- df
+
+# Fit a random forest classification model with spark.randomForest
+model <- spark.randomForest(training, label ~ features, "classification", numTrees = 10)
+
+# Model summary
+summary(model)
+
+# Prediction
+predictions <- predict(model, test)
+head(predictions)
+# $example off:classification$
+
+# Random forest regression model
+
+# $example on:regression$
+# Load training data
+df <- read.df("data/mllib/sample_linear_regression_data.txt", source = "libsvm")
+training <- df
+test <- df
+
+# Fit a random forest regression model with spark.randomForest
+model <- spark.randomForest(training, label ~ features, "regression", numTrees = 10)
+
+# Model summary
+summary(model)
+
+# Prediction
+predictions <- predict(model, test)
+head(predictions)
+# $example off:regression$
+
+sparkR.session.stop()
+```
+
+Below is an appropriate Slurm script:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=spark-ml      # create a short name for your job
+#SBATCH --nodes=1                # node count
+#SBATCH --ntasks-per-node=2      # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem=8G                 # memory per node
+#SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
+#SBATCH --reservation=spark
+
+module purge
+module load anaconda3/2021.11
+module load spark/hadoop3.2/3.2.0
+
+PTH=/usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml
+
+spark-start
+spark-submit --total-executor-cores 2 --executor-memory 4G ${PTH}/randomForest.R
+```
+
 
 ## Spark at Princeton
 
