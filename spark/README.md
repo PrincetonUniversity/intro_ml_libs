@@ -192,6 +192,7 @@ You can see the updated examples on [GitHub](https://github.com/apache/spark/tre
 #SBATCH --cpus-per-task=3        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
+#SBATCH --reservation=spark
 
 module purge
 module load anaconda3/2021.11
