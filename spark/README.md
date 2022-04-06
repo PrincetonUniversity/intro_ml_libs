@@ -285,7 +285,7 @@ $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_linear_regr
 $ sed -i 's$data/mllib/$$g' randomForest.R
 ```
 
-Below is an appropriate Slurm script:
+Below is an appropriate Slurm script (job.slurm):
 
 ```bash
 #!/bin/bash
@@ -295,16 +295,14 @@ Below is an appropriate Slurm script:
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --reservation=spark
+# SBATCH --reservation=spark
 
 module purge
 module load anaconda3/2021.11
 module load spark/hadoop3.2/3.2.0
 
-PTH=/usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml
-
 spark-start
-spark-submit --total-executor-cores 2 --executor-memory 4G ${PTH}/randomForest.R
+spark-submit --total-executor-cores 2 --executor-memory 4G randomForest.R
 ```
 
 Submit the job with:
