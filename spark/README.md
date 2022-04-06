@@ -6,7 +6,7 @@
 
 - Lazy evaluation is used. Operations in the Spark script which transform an RDD are translated to a node in a computation graph instead of being immediately evaluated. Actions cause the graph to be evaluated. Intermediate results can be cached in memory and/or disk.
 
-Spark 3 is available on the Princeton HPC clusters. See the [Python API](https://spark.apache.org/docs/3.2.0/api/python/). See the Research Computing [knowledge base page](https://researchcomputing.princeton.edu/support/knowledge-base/spark).
+Spark 3 is available on the Princeton HPC clusters. See the [Python API](https://spark.apache.org/docs/3.2.0/api/python/) and the Research Computing [knowledge base page](https://researchcomputing.princeton.edu/support/knowledge-base/spark) for Spark.
 
 ## A Simple DataFrame
 
