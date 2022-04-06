@@ -56,6 +56,8 @@ $ sbatch job.slurm  # edit email address
 
 ## Machine Learning
 
+#### Python
+
 Spark MLlib is the machine learning component of Spark. See documentaion for the Python API of [Spark ML 3.2.0](https://spark.apache.org/docs/3.2.0/ml-guide.html). This is the dataframe-based API known as `spark.ml`.
 
 The Spark 3.2 machine learning examples are here:
@@ -226,13 +228,18 @@ RandomForestClassificationModel: uid=RandomForestClassifier_a139e7bca298, numTre
 ...
 ```
 
-### Spark at Princeton
+#### R
+
+See this directory for examples: `/usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml`
+
+
+## Spark at Princeton
 
 [Spark tutorial](https://researchcomputing.princeton.edu/computational-hardware/hadoop/spark-tut)  
 [Tuning Spark applications](https://researchcomputing.princeton.edu/computational-hardware/hadoop/spark-memory)  
 [Spark application submission via Slurm](https://researchcomputing.princeton.edu/faq/spark-via-slurm)
 
-### More links
+## More links
 
 [Sparkling Water](https://www.h2o.ai/products/h2o-sparkling-water/)  
 [Deep Learning Pipelines](https://github.com/databricks/spark-deep-learning)
