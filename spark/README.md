@@ -56,9 +56,7 @@ $ sbatch job.slurm  # edit email address
 
 ## Machine Learning
 
-Spark ML is the machine learning component of Spark. The previous library was called mllib.
-
-The documentaion for the Python API of [Spark ML 3.2.0](https://spark.apache.org/docs/3.2.0/ml-guide.html) is here.
+Spark MLlib is the machine learning component of Spark. See documentaion for the Python API of [Spark ML 3.2.0](https://spark.apache.org/docs/3.2.0/ml-guide.html). This is the dataframe-based API known as `spark.ml`.
 
 The Spark 3.2 machine learning examples are here:
 
