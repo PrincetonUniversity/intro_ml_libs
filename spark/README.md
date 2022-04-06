@@ -174,7 +174,8 @@ $ git clone https://github.com/PrincetonUniversity/intro_ml_libs
 $ cd intro_ml_libs/spark
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/python/ml/random_forest_classifier_example.py .
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_libsvm_data.txt .
-$ sed s$data/mllib/$$ random_forest_classifier_example.py
+# next line corrects the path to sample_libsvm_data.txt
+$ sed -i 's$data/mllib/$$g' random_forest_classifier_example.py
 ```
 
 Use a text editor to replace line 39 of `random_forest_classifier_example.py` with this:
