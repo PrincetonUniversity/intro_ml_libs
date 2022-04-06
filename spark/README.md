@@ -178,12 +178,6 @@ $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_libsvm_data
 $ sed -i 's$data/mllib/$$g' random_forest_classifier_example.py
 ```
 
-Use a text editor to replace line 39 of `random_forest_classifier_example.py` with this:
-
-```bash
-    data = spark.read.format("libsvm").load("sample_libsvm_data.txt")
-```
-
 Now submit the job:
 
 ```bash
