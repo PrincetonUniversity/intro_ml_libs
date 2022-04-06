@@ -206,22 +206,22 @@ The output of the run is:
 ```bash
 $ cat slurm-*.out | grep -v INFO
 ...
-  total: 4.680999166
-  findSplits: 2.825805252
-  findBestSplits: 1.183317259
-  chooseSplits: 1.179836058
+  total: 1.503044646
+  findBestSplits: 1.48605558
+  chooseSplits: 1.478890107
 +--------------+-----+--------------------+
 |predictedLabel|label|            features|
 +--------------+-----+--------------------+
-|           0.0|  0.0|(692,[98,99,100,1...|
 |           0.0|  0.0|(692,[100,101,102...|
 |           0.0|  0.0|(692,[124,125,126...|
-|           0.0|  0.0|(692,[124,125,126...|
+|           0.0|  0.0|(692,[125,126,127...|
+|           0.0|  0.0|(692,[126,127,128...|
 |           0.0|  0.0|(692,[126,127,128...|
 +--------------+-----+--------------------+
 only showing top 5 rows
 
-Test Error = 0
+Test Error = 0.04
+RandomForestClassificationModel: uid=RandomForestClassifier_a139e7bca298, numTrees=10, numClasses=2, numFeatures=692
 ...
 ```
 
