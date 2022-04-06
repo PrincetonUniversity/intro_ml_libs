@@ -61,7 +61,7 @@ Spark MLlib is the machine learning component of Spark. See documentaion for the
 The Spark 3.2 machine learning examples are here:
 
 ```bash
-# ssh tiger, della, perseus, adroit
+# ssh tiger, della, stellar, adroit
 $ cd /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main
 $ ls
 java  python  r  resources  scala  scripts
