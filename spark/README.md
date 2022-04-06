@@ -240,9 +240,6 @@ library(SparkR)
 # Initialize SparkSession
 sparkR.session(appName = "SparkR-ML-randomForest-example")
 
-# Random forest classification model
-
-# $example on:classification$
 # Load training data
 df <- read.df("data/mllib/sample_libsvm_data.txt", source = "libsvm")
 training <- df
@@ -257,11 +254,9 @@ summary(model)
 # Prediction
 predictions <- predict(model, test)
 head(predictions)
-# $example off:classification$
 
 # Random forest regression model
 
-# $example on:regression$
 # Load training data
 df <- read.df("data/mllib/sample_linear_regression_data.txt", source = "libsvm")
 training <- df
@@ -276,9 +271,17 @@ summary(model)
 # Prediction
 predictions <- predict(model, test)
 head(predictions)
-# $example off:regression$
 
 sparkR.session.stop()
+```
+
+Run the commands below to prepare the input files:
+
+```
+$ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml/randomForest.R .
+$ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_libsvm_data.txt .
+# next line corrects the path to sample_libsvm_data.txt
+$ sed -i 's$data/mllib/$$g' randomForest.R
 ```
 
 Below is an appropriate Slurm script:
@@ -301,6 +304,12 @@ PTH=/usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml
 
 spark-start
 spark-submit --total-executor-cores 2 --executor-memory 4G ${PTH}/randomForest.R
+```
+
+Submit the job with:
+
+```
+$ sbatch job.slurm
 ```
 
 
