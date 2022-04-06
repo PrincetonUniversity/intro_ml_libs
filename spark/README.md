@@ -280,7 +280,8 @@ Run the commands below to prepare the input files:
 ```
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml/randomForest.R .
 $ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_libsvm_data.txt .
-# next line corrects the path to sample_libsvm_data.txt
+$ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_linear_regression_data.txt .
+# next line corrects the path to data files
 $ sed -i 's$data/mllib/$$g' randomForest.R
 ```
 
