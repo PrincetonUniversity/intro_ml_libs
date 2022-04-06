@@ -6,7 +6,7 @@
 
 - Lazy evaluation is used. Operations in the Spark script which transform an RDD are translated to a node in a computation graph instead of being immediately evaluated. Actions cause the graph to be evaluated. Intermediate results can be cached in memory and/or disk.
 
-Spark 2.4 is available on the Princeton HPC clusters. See the [Python API](https://spark.apache.org/docs/2.4.6/api/python/index.html). Spark will not work on our clusters with Anaconda modules newer than anaconda3/2019.10.
+Spark 3 is available on the Princeton HPC clusters. See the [Python API](https://spark.apache.org/docs/3.2.0/api/python/). See the Research Computing [knowledge base page](https://researchcomputing.princeton.edu/support/knowledge-base/spark).
 
 ## A Simple DataFrame
 
@@ -15,7 +15,7 @@ The session below illustrates how to create a simple DataFrame in the PySpark sh
 ```bash
 $ ssh <YourNetID>@adroit.princeton.edu  # or another cluster
 $ salloc --nodes=1 --ntasks=1 --time=10
-$ module load anaconda3/2019.10 spark/hadoop2.7/2.4.6
+$ module load anaconda3/2021.11 spark/hadoop3.2/3.2.0
 $ spark-start
 $ pyspark
 
@@ -58,60 +58,61 @@ $ sbatch job.slurm  # edit email address
 
 Spark ML is the machine learning component of Spark. The previous library was called mllib.
 
-The documentaion for the Python API of [Spark ML 2.4](https://spark.apache.org/docs/2.4.6/api/python/pyspark.ml.html) is here.
+The documentaion for the Python API of [Spark ML 3.2.0](https://spark.apache.org/docs/3.2.0/ml-guide.html) is here.
 
-The Spark 2.4 machine learning examples are here:
+The Spark 3.2 machine learning examples are here:
 
 ```bash
 # ssh tiger, della, perseus, adroit
-$ cd /usr/licensed/spark/spark-2.4.6-bin-hadoop2.7/examples/src/main
+$ cd /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main
 $ ls
-java  python  r  resources  scala
-$ cd /usr/licensed/spark/spark-2.4.6-bin-hadoop2.7/examples/src/main/python/ml
+java  python  r  resources  scala  scripts
+$ cd /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/python/ml
 $ ls
-aft_survival_regression.py                   logistic_regression_with_elastic_net.py
-als_example.py                               max_abs_scaler_example.py
-binarizer_example.py                         min_hash_lsh_example.py
-bisecting_k_means_example.py                 min_max_scaler_example.py
-bucketed_random_projection_lsh_example.py    multiclass_logistic_regression_with_elastic_net.py
-bucketizer_example.py                        multilayer_perceptron_classification.py
-chisq_selector_example.py                    naive_bayes_example.py
-chi_square_test_example.py                   n_gram_example.py
-correlation_example.py                       normalizer_example.py
-count_vectorizer_example.py                  onehot_encoder_example.py
-cross_validator.py                           one_vs_rest_example.py
-dataframe_example.py                         pca_example.py
-dct_example.py                               pipeline_example.py
-decision_tree_classification_example.py      polynomial_expansion_example.py
-decision_tree_regression_example.py          quantile_discretizer_example.py
-elementwise_product_example.py               random_forest_classifier_example.py
-estimator_transformer_param_example.py       random_forest_regressor_example.py
-fpgrowth_example.py                          rformula_example.py
-gaussian_mixture_example.py                  sql_transformer.py
-generalized_linear_regression_example.py     standard_scaler_example.py
-gradient_boosted_tree_classifier_example.py  stopwords_remover_example.py
-gradient_boosted_tree_regressor_example.py   string_indexer_example.py
+aft_survival_regression.py                   max_abs_scaler_example.py
+als_example.py                               min_hash_lsh_example.py
+binarizer_example.py                         min_max_scaler_example.py
+bisecting_k_means_example.py                 multiclass_logistic_regression_with_elastic_net.py
+bucketed_random_projection_lsh_example.py    multilayer_perceptron_classification.py
+bucketizer_example.py                        naive_bayes_example.py
+chisq_selector_example.py                    n_gram_example.py
+chi_square_test_example.py                   normalizer_example.py
+correlation_example.py                       onehot_encoder_example.py
+count_vectorizer_example.py                  one_vs_rest_example.py
+cross_validator.py                           pca_example.py
+dataframe_example.py                         pipeline_example.py
+dct_example.py                               polynomial_expansion_example.py
+decision_tree_classification_example.py      power_iteration_clustering_example.py
+decision_tree_regression_example.py          prefixspan_example.py
+elementwise_product_example.py               quantile_discretizer_example.py
+estimator_transformer_param_example.py       random_forest_classifier_example.py
+feature_hasher_example.py                    random_forest_regressor_example.py
+fm_classifier_example.py                     rformula_example.py
+fm_regressor_example.py                      robust_scaler_example.py
+fpgrowth_example.py                          sql_transformer.py
+gaussian_mixture_example.py                  standard_scaler_example.py
+generalized_linear_regression_example.py     stopwords_remover_example.py
+gradient_boosted_tree_classifier_example.py  string_indexer_example.py
+gradient_boosted_tree_regressor_example.py   summarizer_example.py
 imputer_example.py                           tf_idf_example.py
 index_to_string_example.py                   tokenizer_example.py
-isotonic_regression_example.py               train_validation_split.py
-kmeans_example.py                            vector_assembler_example.py
-lda_example.py                               vector_indexer_example.py
-linear_regression_with_elastic_net.py        vector_slicer_example.py
-linearsvc.py                                 word2vec_example.py
-logistic_regression_summary_example.py
+interaction_example.py                       train_validation_split.py
+isotonic_regression_example.py               univariate_feature_selector_example.py
+kmeans_example.py                            variance_threshold_selector_example.py
+lda_example.py                               vector_assembler_example.py
+linear_regression_with_elastic_net.py        vector_indexer_example.py
+linearsvc.py                                 vector_size_hint_example.py
+logistic_regression_summary_example.py       vector_slicer_example.py
+logistic_regression_with_elastic_net.py      word2vec_example.py
 ```
 
 Below is `random_forest_classifier_example.py`:
 
 ```python
-from __future__ import print_function
-
-# $example on$
 from pyspark.ml import Pipeline
 from pyspark.ml.classification import RandomForestClassifier
 from pyspark.ml.feature import IndexToString, StringIndexer, VectorIndexer
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
-# $example off$
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
@@ -120,7 +121,6 @@ if __name__ == "__main__":
         .appName("RandomForestClassifierExample")\
         .getOrCreate()
 
-    # $example on$
     # Load and parse the data file, converting it to a DataFrame.
     data = spark.read.format("libsvm").load("data/mllib/sample_libsvm_data.txt")
 
@@ -163,7 +163,6 @@ if __name__ == "__main__":
 
     rfModel = model.stages[2]
     print(rfModel)  # summary only
-    # $example off$
 
     spark.stop()
 ```
@@ -173,8 +172,9 @@ Run the commands below:
 ```bash
 $ git clone https://github.com/PrincetonUniversity/intro_ml_libs
 $ cd intro_ml_libs/spark
-$ cp /usr/licensed/spark/spark-2.4.6-bin-hadoop2.7/examples/src/main/python/ml/random_forest_classifier_example.py .
-$ cp /usr/licensed/spark/spark-2.4.6-bin-hadoop2.7/data/mllib/sample_libsvm_data.txt .
+$ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/python/ml/random_forest_classifier_example.py .
+$ cp /usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/data/mllib/sample_libsvm_data.txt .
+$ sed s$data/mllib/$$ random_forest_classifier_example.py
 ```
 
 Use a text editor to replace line 39 of `random_forest_classifier_example.py` with this:
@@ -198,11 +198,11 @@ You can see the updated examples on [GitHub](https://github.com/apache/spark/tre
 #SBATCH --ntasks-per-node=2      # total number of tasks across all nodes
 #SBATCH --cpus-per-task=3        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
-#SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
+#SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2019.10
-module load spark/hadoop2.7/2.4.6
+module load anaconda3/2021.11
+module load spark/hadoop3.2/3.2.0
 
 spark-start
 spark-submit --total-executor-cores 6 --executor-memory 4G random_forest_classifier_example.py
