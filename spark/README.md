@@ -299,7 +299,6 @@ Below is an appropriate Slurm script (job.slurm):
 #SBATCH --reservation=spark
 
 module purge
-module load anaconda3/2021.11
 module load spark/hadoop3.2/3.2.0
 
 spark-start
