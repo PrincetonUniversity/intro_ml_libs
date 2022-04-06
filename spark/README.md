@@ -56,7 +56,7 @@ $ sbatch job.slurm  # edit email address
 
 ## Machine Learning
 
-#### Python
+#### Python Example
 
 Spark MLlib is the machine learning component of Spark. See documentaion for the Python API of [Spark ML 3.2.0](https://spark.apache.org/docs/3.2.0/ml-guide.html). This is the dataframe-based API known as `spark.ml`.
 
@@ -228,7 +228,7 @@ RandomForestClassificationModel: uid=RandomForestClassifier_a139e7bca298, numTre
 ...
 ```
 
-#### R
+#### R Example
 
 See this directory for examples: `/usr/licensed/spark/spark-3.2.0-bin-hadoop3.2/examples/src/main/r/ml`
 
