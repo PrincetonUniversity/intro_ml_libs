@@ -295,7 +295,7 @@ Below is an appropriate Slurm script (job.slurm):
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-# SBATCH --reservation=spark
+#SBATCH --reservation=spark
 
 module purge
 module load anaconda3/2021.11
