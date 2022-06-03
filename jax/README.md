@@ -19,12 +19,27 @@ $ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-env jax "jaxlib==0.3.10=cud
 
 ## Pip Installation
 
+### Della
+
+Run the commands below to install `jax` on Della:
+
+```
+$ ssh <YourNetID>@della-gpu.princeton.edu
+$ module load anaconda3/2021.11
+$ conda create --name jax-env python
+$ conda activate jax-env
+$ pip install --upgrade "jax[cuda]" -f https://storage.googleapis.com/jax-releases/jax_releases.html
+$ module load cudatoolkit/11.6 cudnn/cuda-11.x/8.2.0
+$ python
+>>> import jax
+```
+
 ### TigerGPU
 
 Run these commands to install `jax`:
 
 ```
-$ module load anaconda3/2020.11
+$ module load anaconda3/2021.11
 $ conda create --name jax-gpu python=3.8 matplotlib
 $ conda activate jax-gpu
 $ pip install jax jaxlib==0.1.67+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
@@ -37,7 +52,7 @@ See the GPU example job below. The correct environment modules to use in the Slu
 Run these commands to install `jax`:
 
 ```
-$ module load anaconda3/2020.11
+$ module load anaconda3/2021.11
 $ conda create --name jax-gpu python=3.8 matplotlib
 $ conda activate jax-gpu
 $ pip install jax jaxlib==0.1.64+cuda102 -f https://storage.googleapis.com/jax-releases/jax_releases.html
@@ -67,7 +82,7 @@ ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel
 Here are the installation directions for the CPU-only clusters:
 
 ```
-$ module load anaconda3/2020.11
+$ module load anaconda3/2021.11
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
 
