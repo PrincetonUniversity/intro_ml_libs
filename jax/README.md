@@ -10,7 +10,13 @@ together for high-performance machine learning research. JAX can be used for:
 - accelerating code using a JIT
 - carrying out computations using multiple GPUs/TPUs
 
-## Installation
+## Conda Installation
+
+```
+$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jx jax "jaxlib==0.3.10=cuda112*" -c conda-forge
+```
+
+## Pip Installation
 
 ### TigerGPU
 
