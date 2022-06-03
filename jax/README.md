@@ -13,7 +13,8 @@ together for high-performance machine learning research. JAX can be used for:
 ## Conda Installation
 
 ```
-$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jx jax "jaxlib==0.3.10=cuda112*" -c conda-forge
+$ module load anaconda3/2021.11
+$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-env jax "jaxlib==0.3.10=cuda112*" -c conda-forge
 ```
 
 ## Pip Installation
