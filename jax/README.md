@@ -113,9 +113,8 @@ See [this page](https://researchcomputing.princeton.edu/python) for Slurm script
 Run the commands below to submit the test job. Recall that the compute nodes do not have internet access so we have to download the data on the head node in advance.
 
 ```bash
-$ ssh <YourNetID>@tigergpu.princeton.edu
-$ module load anaconda3/2020.11
-$ conda activate jax-gpu  # installation directions above
+$ ssh <YourNetID>@della-gpu.princeton.edu
+$ module load anaconda3/2021.11
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ git clone https://github.com/google/jax
 $ cd jax/examples
@@ -137,9 +136,9 @@ Two files need to be modified. First, make the `mnist_raw()` function in `jax/ex
   test_labels = parse_labels(path.join(_DATA, "t10k-labels-idx1-ubyte.gz"))
 ```
 
-Second, change `from examples import datasets` in `mnist_classify.py` to `import datasets`.
+Second, change `from examples import datasets` in `mnist_classifier.py` to `import datasets`.
 
-The Slurm script below (job.slurm) may be used on Tiger -- different modules are needed for Adroit:
+The Slurm script below (job.slurm) may be used on Della -- different modules are needed for other clusters (see above):
 
 ```bash
 #!/bin/bash
@@ -152,7 +151,7 @@ The Slurm script below (job.slurm) may be used on Tiger -- different modules are
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2020.11 cudatoolkit/11.0 cudnn/cuda-11.0/8.0.2
+module load anaconda3/2021.11 cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
 conda activate jax-gpu
 
 python mnist_classifier.py
