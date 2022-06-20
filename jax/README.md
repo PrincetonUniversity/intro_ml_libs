@@ -51,12 +51,12 @@ Run these commands to install `jax`:
 
 ```
 $ module load anaconda3/2021.11
-$ conda create --name jax-gpu python=3.8 matplotlib
+$ conda create --name jax-gpu python=3.9 matplotlib
 $ conda activate jax-gpu
-$ pip install jax jaxlib==0.1.67+cuda110 -f https://storage.googleapis.com/jax-releases/jax_releases.html
+$ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 ```
 
-See the GPU example job below. The correct environment modules to use in the Slurm script are `cudatoolkit/11.0` and `cudnn/cuda-11.0/8.0.2`.
+The correct environment modules to use in the Slurm script are `cudatoolkit/11.3`, `cudnn/cuda-11.x/8.2.0` and `nvhpc/21.5`. The `nvhpc/21.5` module is needed to avoid the error: `ptxas returned an error during compilation of ptx to sass`
 
 ### Adroit (GPU)
 
