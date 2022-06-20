@@ -44,6 +44,7 @@ $ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releas
 
 Since `della-gpu` has a GPU, we can run a short test:
 
+```
 $ module load cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
 $ python
 >>> import jax.numpy as jnp
