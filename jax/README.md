@@ -37,13 +37,21 @@ Run the commands below to install `jax` on Della:
 ```
 $ ssh <YourNetID>@della-gpu.princeton.edu
 $ module load anaconda3/2021.11
-$ conda create --name jax-env python
-$ conda activate jax-env
-$ pip install --upgrade "jax[cuda]" -f https://storage.googleapis.com/jax-releases/jax_releases.html
-$ module load cudatoolkit/11.6 cudnn/cuda-11.x/8.2.0
-$ python
->>> import jax
+$ conda create --name jax-gpu python=3.9 matplotlib
+$ conda activate jax-gpu
+$ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 ```
+
+Since `della-gpu` has a GPU, we can run a short test:
+
+$ module load cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
+$ python
+>>> import jax.numpy as jnp
+>>> jnp.arange(3)
+DeviceArray([0, 1, 2], dtype=int32)
+```
+
+The correct environment modules to use in the Slurm script are `anaconda3/2021.11`, `cudatoolkit/11.7` and `cudnn/cuda-11.x/8.2.0`.
 
 ### TigerGPU
 
