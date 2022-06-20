@@ -12,9 +12,20 @@ together for high-performance machine learning research. JAX can be used for:
 
 ## Conda Installation
 
+The easiest way to install JAX is witih conda:
+
 ```
 $ module load anaconda3/2021.11
 $ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-env jax "jaxlib==0.3.10=cuda112*" -c conda-forge
+```
+
+The directions above are for jaxlib version 0.3.10 with CUDA 11.2. To see the latest version use this command:
+
+```
+$ module load anaconda3/2021.11
+$ conda search jaxlib -c conda-forge
+...
+jaxlib                        0.3.10 cuda112py39h8d07533_0  conda-forge
 ```
 
 ## Pip Installation
