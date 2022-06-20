@@ -167,34 +167,34 @@ Here is the output of the job:
 
 ```
 Starting training...
-Epoch 0 in 2.20 sec
-Training set accuracy 0.8719333410263062
-Test set accuracy 0.8804000616073608
-Epoch 1 in 0.42 sec
-Training set accuracy 0.8979166746139526
-Test set accuracy 0.9032000303268433
-Epoch 2 in 0.42 sec
-Training set accuracy 0.9092666506767273
-Test set accuracy 0.9143000245094299
-Epoch 3 in 0.42 sec
-Training set accuracy 0.9170666933059692
-Test set accuracy 0.9221000671386719
-Epoch 4 in 0.42 sec
+Epoch 0 in 1.73 sec
+Training set accuracy 0.8719500303268433
+Test set accuracy 0.880299985408783
+Epoch 1 in 0.18 sec
+Training set accuracy 0.8978999853134155
+Test set accuracy 0.9031999707221985
+Epoch 2 in 0.18 sec
+Training set accuracy 0.9092000126838684
+Test set accuracy 0.914199948310852
+Epoch 3 in 0.18 sec
+Training set accuracy 0.9171000123023987
+Test set accuracy 0.9220999479293823
+Epoch 4 in 0.18 sec
 Training set accuracy 0.9226500391960144
-Test set accuracy 0.9280000329017639
-Epoch 5 in 0.42 sec
+Test set accuracy 0.9279999732971191
+Epoch 5 in 0.18 sec
 Training set accuracy 0.9271833300590515
-Test set accuracy 0.929900050163269
-Epoch 6 in 0.42 sec
+Test set accuracy 0.9298999905586243
+Epoch 6 in 0.19 sec
 Training set accuracy 0.932366669178009
-Test set accuracy 0.932900071144104
-Epoch 7 in 0.42 sec
+Test set accuracy 0.9328999519348145
+Epoch 7 in 0.18 sec
 Training set accuracy 0.9357333183288574
-Test set accuracy 0.9364000558853149
-Epoch 8 in 0.42 sec
-Training set accuracy 0.938800036907196
-Test set accuracy 0.9394000172615051
-Epoch 9 in 0.42 sec
-Training set accuracy 0.9425666928291321
-Test set accuracy 0.9419000744819641
+Test set accuracy 0.9362999796867371
+Epoch 8 in 0.18 sec
+Training set accuracy 0.9387666583061218
+Test set accuracy 0.9393999576568604
+Epoch 9 in 0.18 sec
+Training set accuracy 0.942550003528595
+Test set accuracy 0.9419999718666077
 ```
