@@ -18,16 +18,16 @@ The easiest way to install the GPU version of JAX with conda is:
 
 ```
 $ module load anaconda3/2022.5
-$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-env jax "jaxlib==0.3.10=cuda112*" -c conda-forge
+$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-env jax "jaxlib==0.4.1=cuda112*" -c conda-forge
 ```
 
-The directions above are for jaxlib version 0.3.10 with CUDA 11.2. To see the latest version use this command:
+The directions above are for jaxlib version 0.4.1 with CUDA 11.2. To see the latest version use this command:
 
 ```
 $ module load anaconda3/2022.5
 $ conda search jaxlib -c conda-forge
 ...
-jaxlib                        0.3.10 cuda112py39h8d07533_0  conda-forge
+jaxlib                        0.4.1 cuda112py39h8d07533_0  conda-forge
 ```
 
 ## Pip Installation
@@ -38,7 +38,7 @@ Run the commands below to install `jax` on Della:
 
 ```
 $ ssh <YourNetID>@della-gpu.princeton.edu
-$ module load anaconda3/2021.11
+$ module load anaconda3/2022.5
 $ conda create --name jax-gpu python=3.9 matplotlib
 $ conda activate jax-gpu
 $ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
@@ -54,27 +54,14 @@ $ python
 DeviceArray([0, 1, 2], dtype=int32)
 ```
 
-The correct environment modules to use in the Slurm script are `anaconda3/2021.11`, `cudatoolkit/11.7` and `cudnn/cuda-11.x/8.2.0`.
-
-### TigerGPU
-
-Run these commands to install `jax`:
-
-```
-$ module load anaconda3/2021.11
-$ conda create --name jax-gpu python=3.9 matplotlib
-$ conda activate jax-gpu
-$ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-```
-
-The correct environment modules to use in the Slurm script are `anaconda3/2021.11`, `cudatoolkit/11.3`, `cudnn/cuda-11.x/8.2.0` and `nvhpc/21.5`. The `nvhpc/21.5` module is needed to avoid the error: `ptxas returned an error during compilation of ptx to sass`
+The correct environment modules to use in the Slurm script are `anaconda3/2021.11`, `cudatoolkit/11.7` and `cudnn/cuda-11.x/8.2.0`. The `nvhpc/21.5` module should be loaded if you encounter the error: `ptxas returned an error during compilation of ptx to sass`
 
 ### Adroit (GPU)
 
 Run these commands to install `jax`:
 
 ```
-$ module load anaconda3/2021.11
+$ module load anaconda3/2022.5
 $ conda create --name jax-gpu python=3.9 matplotlib
 $ conda activate jax-gpu
 $ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
@@ -104,7 +91,7 @@ ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel
 Here are the installation directions for the CPU-only clusters:
 
 ```
-$ module load anaconda3/2021.11
+$ module load anaconda3/2022.5
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
 
@@ -116,7 +103,7 @@ Run the commands below to submit the test job. Recall that the compute nodes do 
 
 ```bash
 $ ssh <YourNetID>@della-gpu.princeton.edu
-$ module load anaconda3/2021.11
+$ module load anaconda3/2022.5
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ git clone https://github.com/google/jax
 $ cd jax/examples
