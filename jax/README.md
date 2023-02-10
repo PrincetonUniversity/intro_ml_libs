@@ -67,7 +67,7 @@ $ conda activate jax-gpu
 $ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 ```
 
-The correct environment modules to use in the Slurm script are `anaconda3/2021.11`, `cudatoolkit/11.7` and `cudnn/cuda-11.5/8.3.2`.
+The correct environment modules to use in the Slurm script are `anaconda3/2022.5`, `cudatoolkit/11.7` and `cudnn/cuda-11.5/8.3.2`.
 
 ### Traverse
 
