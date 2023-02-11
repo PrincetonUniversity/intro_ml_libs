@@ -52,6 +52,13 @@ $ python
 >>> import jax.numpy as jnp
 >>> jnp.arange(3)
 DeviceArray([0, 1, 2], dtype=int32)
+>>> import jax
+>>> jax.default_backend()
+'gpu'
+>>> jax.devices()
+[StreamExecutorGpuDevice(id=0, process_index=0, slice_index=0)]
+>>> jax.local_device_count()
+1
 ```
 
 The correct environment modules to use in the Slurm script are `anaconda3/2022.5`, `cudatoolkit/11.7` and `cudnn/cuda-11.x/8.2.0`. The `nvhpc/21.5` module should be loaded if you encounter the error: `ptxas returned an error during compilation of ptx to sass`
