@@ -15,7 +15,7 @@ The session below illustrates how to create a simple DataFrame in the PySpark sh
 ```bash
 $ ssh <YourNetID>@adroit.princeton.edu  # or another cluster
 $ salloc --nodes=1 --ntasks=1 --time=10
-$ module load anaconda3/2021.11 spark/hadoop3.2/3.2.0
+$ module load anaconda3/2022.10 spark/hadoop3.2/3.2.0
 $ spark-start
 $ pyspark
 
@@ -194,10 +194,9 @@ You can see the updated examples on [GitHub](https://github.com/apache/spark/tre
 #SBATCH --cpus-per-task=3        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --reservation=spark
 
 module purge
-module load anaconda3/2021.11
+module load anaconda3/2022.10
 module load spark/hadoop3.2/3.2.0
 
 spark-start
@@ -296,7 +295,6 @@ Below is an appropriate Slurm script (job.slurm):
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --reservation=spark
 
 module purge
 module load spark/hadoop3.2/3.2.0
