@@ -4,14 +4,15 @@
 
 This workshop provides demonstrations of the effective usage of popular machine learning libraries on the HPC clusters at Princeton. It shows how to install each library as well as how to write Slurm scripts to take advantage of multi-threading and/or GPUs. The material covers PyTorch, TensorFlow, JAX, Julia, Spark, Rapids, Scikit-learn, R and Snap ML.
 
+<!--
 ## Announcements
 
 #### AI for Science Bootcamp, by NVIDIA
 Tue May 18, 9am-12:30pm & Wed May 19, 9am-12:30pm  
 Virtual workshop (Zoom link will be emailed to accepted participants)  
 [Registration is required](https://researchcomputing.princeton.edu/events/2021/ai-science-bootcamp-nvidia)
+-->
 
-<!--
 ## Useful links
 - [PyTorch at Princeton](https://github.com/PrincetonUniversity/install_pytorch)  |  [PyTorch.org](https://pytorch.org)  
 - [TensorFlow at Princeton](https://github.com/PrincetonUniversity/slurm_mnist) | [TensorFlow.org](https://www.tensorflow.org)  
@@ -21,7 +22,7 @@ Virtual workshop (Zoom link will be emailed to accepted participants)
 - [NVIDIA Rapids](https://rapids.ai/)  
 - [R at Princeton](https://researchcomputing.princeton.edu/R) | [R ML packages on CRAN](https://cran.r-project.org/web/views/MachineLearning.html) 
 - [Python at Princeton](https://github.com/PrincetonUniversity/installing_python_packages) | [Scikit-Learn website](https://scikit-learn.org/stable/)  
--->
+
 
 <!--
 ## Adroit Reservation
@@ -31,7 +32,7 @@ Add the following line to your Slurm script for access to the V100 GPU node duri
 ```
 #SBATCH --reservation=mllib      # REMOVE THIS LINE AFTER THE WORKSHOP
 ```
--->
+
 
 #### NVIDIA GPU Hackathon at Princeton
 
@@ -46,6 +47,7 @@ AMD GPU node coming to Adroit in the coming weeks.
 
 ## Workshop Survey and Screenshots
 [Start Survey](http://bit.ly/picscie_wkshp_survey_spring2021)
+-->
 
 <!--
 ## Attendance Sheet
