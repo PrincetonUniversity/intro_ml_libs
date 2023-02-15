@@ -5,10 +5,9 @@
 #SBATCH --cpus-per-task=3        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=8G                 # memory per node
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
-#SBATCH --reservation=spark
 
 module purge
-module load anaconda3/2021.11
+module load anaconda3/2022.10
 module load spark/hadoop3.2/3.2.0
 
 spark-start
