@@ -21,7 +21,7 @@ Virtual workshop (Zoom link will be emailed to accepted participants)
 - [Julia at Princeton](https://researchcomputing.princeton.edu/julia) 
 - [NVIDIA Rapids](https://rapids.ai/)  
 - [R at Princeton](https://researchcomputing.princeton.edu/R) | [R ML packages on CRAN](https://cran.r-project.org/web/views/MachineLearning.html) 
-- [Python at Princeton](https://github.com/PrincetonUniversity/installing_python_packages) | [Scikit-Learn website](https://scikit-learn.org/stable/)  
+- [Python at Princeton]([https://github.com/PrincetonUniversity/installing_python_packages](https://researchcomputing.princeton.edu/support/knowledge-base/python)) | [Scikit-Learn website](https://scikit-learn.org/stable/)  
 
 
 <!--
