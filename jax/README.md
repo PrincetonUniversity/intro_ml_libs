@@ -49,13 +49,13 @@ conda activate jax-gpu
 python svd.py
 ```
 
-A sample Python script that runs on the GPU for several seconds at 99% utilization is:
+A sample Python script (svd.py) that runs on the GPU for several seconds at 99% utilization is:
 
 ```python
 import jax.numpy as jnp
 import numpy as np
 
-N=7000
+N = 7000
 jnp.linalg.svd(np.random.random(size=(N, N)))
 ```
 
