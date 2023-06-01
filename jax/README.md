@@ -46,7 +46,17 @@ module purge
 module load anaconda3/2023.3
 conda activate jax-gpu
 
-python mnist_classifier.py
+python svd.py
+```
+
+A sample Python script that runs on the GPU for several seconds at 99% utilization is:
+
+```python
+import jax.numpy as jnp
+import numpy as np
+
+N=7000
+jnp.linalg.svd(np.random.random(size=(N, N)))
 ```
 
 ## Pip Installation
@@ -70,7 +80,7 @@ $ module load cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
 $ python
 >>> import jax.numpy as jnp
 >>> jnp.arange(3)
-DeviceArray([0, 1, 2], dtype=int32)
+Array([0, 1, 2], dtype=int32)
 >>> import jax
 >>> jax.default_backend()
 'gpu'
@@ -78,6 +88,8 @@ DeviceArray([0, 1, 2], dtype=int32)
 [StreamExecutorGpuDevice(id=0, process_index=0, slice_index=0)]
 >>> jax.local_device_count()
 1
+>>> N = 7000
+>>> jnp.linalg.svd(np.random.random(size=(N, N)))
 ```
 
 The correct environment modules to use in the Slurm script are `anaconda3/2022.5`, `cudatoolkit/11.7` and `cudnn/cuda-11.x/8.2.0`. The `nvhpc/21.5` module should be loaded if you encounter the error: `ptxas returned an error during compilation of ptx to sass`
