@@ -17,17 +17,36 @@ together for high-performance machine learning research. JAX can be used for:
 The easiest way to install the GPU version of JAX with conda is:
 
 ```
-$ module load anaconda3/2022.5
-$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-env jax "jaxlib==0.4.3=cuda112*" -c conda-forge
+$ module load anaconda3/2023.3
+$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-gpu jax "jaxlib==0.4.10=cuda112*" -c conda-forge
 ```
 
-The directions above are for jaxlib version 0.4.3 with CUDA 11.2. To see the latest version use this command:
+The directions above are for jaxlib version 0.4.10 with CUDA 11.x. To see the latest version use this command:
 
 ```
-$ module load anaconda3/2022.5
+$ module load anaconda3/2023.3
 $ conda search jaxlib -c conda-forge
 ...
-jaxlib                        0.4.3 cuda112py39h8d07533_0  conda-forge
+jaxlib                        0.4.10 cuda112py39ha2564ec_200  conda-forge
+```
+
+A sample Slurm script is shown below:
+
+```
+#!/bin/bash
+#SBATCH --job-name=jax-gpu       # create a short name for your job
+#SBATCH --nodes=1                # node count
+#SBATCH --ntasks=1               # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
+#SBATCH --gres=gpu:1             # number of gpus per node
+#SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
+
+module purge
+module load anaconda3/2023.3
+conda activate jax-gpu
+
+python mnist_classifier.py
 ```
 
 ## Pip Installation
