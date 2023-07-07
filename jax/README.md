@@ -61,9 +61,7 @@ jnp.linalg.svd(np.random.random(size=(N, N)))
 
 ## Pip Installation
 
-Please try the directions here: [https://github.com/google/jax#installation](https://github.com/google/jax#installation)
-
-As of July 7, 2023, it appears that the pip directions in the link above do not work. Please use the Conda directions above until this is resolved.
+As of July 7, 2023, it appears that the [pip directions](https://github.com/google/jax#installation) do not work. Please use the Conda directions above until this is resolved.
 
 ### Traverse
 
