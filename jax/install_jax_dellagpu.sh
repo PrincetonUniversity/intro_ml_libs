@@ -3,7 +3,7 @@
 # ssh <YourNetID>@della-gpu.princeton.edu
 
 module purge
-module load anaconda3/2022.5
+module load anaconda3/2023.3
 conda create --name jax-gpu-src python=3.9 numpy scipy six wheel -y
 conda activate jax-gpu-src
 
