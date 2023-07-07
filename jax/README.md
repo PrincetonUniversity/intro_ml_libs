@@ -61,51 +61,9 @@ jnp.linalg.svd(np.random.random(size=(N, N)))
 
 ## Pip Installation
 
-### Della
+Please try the directions here: [https://github.com/google/jax#installation](https://github.com/google/jax#installation)
 
-Run the commands below to install `jax` on Della:
-
-```
-$ ssh <YourNetID>@della-gpu.princeton.edu
-$ module load anaconda3/2022.5
-$ conda create --name jax-gpu python=3.9 matplotlib
-$ conda activate jax-gpu
-$ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-```
-
-Since `della-gpu` has a GPU, we can run a short test:
-
-```
-$ module load cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
-$ python
->>> import jax.numpy as jnp
->>> jnp.arange(3)
-Array([0, 1, 2], dtype=int32)
->>> import jax
->>> jax.default_backend()
-'gpu'
->>> jax.devices()
-[StreamExecutorGpuDevice(id=0, process_index=0, slice_index=0)]
->>> jax.local_device_count()
-1
->>> N = 7000
->>> jnp.linalg.svd(np.random.random(size=(N, N)))
-```
-
-The correct environment modules to use in the Slurm script are `anaconda3/2022.5`, `cudatoolkit/11.7` and `cudnn/cuda-11.x/8.2.0`. The `nvhpc/21.5` module should be loaded if you encounter the error: `ptxas returned an error during compilation of ptx to sass`
-
-### Adroit (GPU)
-
-Run these commands to install `jax`:
-
-```
-$ module load anaconda3/2022.5
-$ conda create --name jax-gpu python=3.9 matplotlib
-$ conda activate jax-gpu
-$ pip install "jax[cuda11_cudnn82]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-```
-
-The correct environment modules to use in the Slurm script are `anaconda3/2022.5`, `cudatoolkit/11.7` and `cudnn/cuda-11.5/8.3.2`.
+As of July 7, 2023, it appears that the pip directions in the link above do not work. Please use the Conda directions above until this is resolved.
 
 ### Traverse
 
