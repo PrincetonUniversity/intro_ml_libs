@@ -17,17 +17,17 @@ For an introduction to machine learning and Scikit-learn see this GitHub [repo a
 Scikit-learn is pre-installed as part of the Anaconda Python disribution:
 
 ```
-$ module load anaconda3/2020.11
+$ module load anaconda3/2023.3
 (base) $ python
 >>> import sklearn
 >>> print(sklearn.__version__)
-'0.23.2'
+'1.2.1'
 ```
 
 If you need additional packages that are not found in the Anaconda distribution then make your own Conda environment:
 
 ```bash
-$ module load anaconda3/2020.11
+$ module load anaconda3/2023.3
 $ conda create --name sklearn-env --channel <some-channel> scikit-learn pandas matplotlib <another-package>
 ```
 
@@ -38,7 +38,7 @@ See [this page](https://researchcomputing.princeton.edu/python) for more on crea
 Intel provides their own distribution of Python as well as acceleration libraries for Scikit-learn such as [DAAL](https://software.intel.com/content/www/us/en/develop/tools/data-analytics-acceleration-library.html). You may consider creating your Scikit-learn environment using packages from the `intel` channel:
 
 ```bash
-$ module load anaconda3/2020.11
+$ module load anaconda3/2023.3
 $ conda create --name sklearn-env --channel intel scikit-learn pandas matplotlib
 ```
 
@@ -62,7 +62,7 @@ Below is an appropriate Slurm script for a Scikit-learn job that takes advantage
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
-module load anaconda3/2020.11
+module load anaconda3/2023.3
 conda activate sklearn-env
 
 python myscript.py
