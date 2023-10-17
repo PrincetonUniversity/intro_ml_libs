@@ -18,16 +18,16 @@ The easiest way to install the GPU version of JAX with conda is:
 
 ```
 $ module load anaconda3/2023.3
-$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-gpu jax "jaxlib==0.4.10=cuda112*" -c conda-forge
+$ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-gpu jax "jaxlib==0.4.14=cuda112*" -c conda-forge
 ```
 
-The directions above are for jaxlib version 0.4.10 with CUDA 11.x. To see the latest version use this command:
+The directions above are for jaxlib version 0.4.14 with CUDA 11.x. To see the latest version use this command:
 
 ```
 $ module load anaconda3/2023.3
 $ conda search jaxlib -c conda-forge
 ...
-jaxlib                        0.4.10 cuda112py39ha2564ec_200  conda-forge
+jaxlib                        0.4.14 cuda112py39ha2564ec_200  conda-forge
 ```
 
 A sample Slurm script is shown below:
@@ -43,7 +43,7 @@ A sample Slurm script is shown below:
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2023.3
+module load anaconda3/2023.9
 conda activate jax-gpu
 
 python svd.py
