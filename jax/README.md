@@ -17,7 +17,7 @@ together for high-performance machine learning research. JAX can be used for:
 The easiest way to install the GPU version of JAX with conda is:
 
 ```
-$ module load anaconda3/2023.3
+$ module load anaconda3/2023.9
 $ CONDA_OVERRIDE_CUDA="11.2" conda create --name jax-gpu jax "jaxlib==0.4.14=cuda112*" -c conda-forge
 ```
 
