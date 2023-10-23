@@ -15,7 +15,7 @@ The session below illustrates how to create a simple DataFrame in the PySpark sh
 ```bash
 $ ssh <YourNetID>@adroit.princeton.edu  # or another cluster
 $ salloc --nodes=1 --ntasks=1 --time=10
-$ module load anaconda3/2022.10 spark/hadoop3.2/3.2.0
+$ module load anaconda3/2022.10 spark/hadoop3.2/3.2.0  # do not use a newer anaconda3 module
 $ spark-start
 $ pyspark
 
