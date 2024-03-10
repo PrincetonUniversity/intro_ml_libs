@@ -60,16 +60,16 @@ N = 7000
 jnp.linalg.svd(np.random.random(size=(N, N)))
 ```
 
-## Pip Installation
+### CPU-Only Version (Della, Stellar)
 
-The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
+Here are the installation directions for the CPU-only clusters:
 
 ```
 $ module load anaconda3/2024.2
-$ conda create --name jx-env python=3.11 -y
-$ conda activate jx-env
-$ pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+$ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
+
+See [this page](https://researchcomputing.princeton.edu/python) for Slurm scripts. Be sure to take advantage of the parallelism of the CPU version which uses MKL and OpenMP. For the MNIST example, one finds as `cpus-per-task` increases from 1, 2, 4, the run time decreases as 139 s, 87 s, 58 s.
 
 ### Traverse
 
@@ -88,16 +88,16 @@ You will probably encounter the following error which arises because the build s
 ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel on this platform.
 ```
 
-### CPU-Only Version (Della, Stellar)
+## Pip Installation
 
-Here are the installation directions for the CPU-only clusters:
+The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
 
 ```
 $ module load anaconda3/2024.2
-$ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
+$ conda create --name jx-env python=3.11 -y
+$ conda activate jx-env
+$ pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 ```
-
-See [this page](https://researchcomputing.princeton.edu/python) for Slurm scripts. Be sure to take advantage of the parallelism of the CPU version which uses MKL and OpenMP. For the MNIST example, one finds as `cpus-per-task` increases from 1, 2, 4, the run time decreases as 139 s, 87 s, 58 s.
 
 ## Example Job for GPU Version
 
