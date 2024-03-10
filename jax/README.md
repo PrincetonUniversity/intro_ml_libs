@@ -17,15 +17,15 @@ together for high-performance machine learning research. JAX can be used for:
 The easiest way to install the GPU version of JAX with conda is:
 
 ```
-# ssh to adroit-vis, della-gpu or stellar-vis1/2
-$ module load anaconda3/2023.9
+# ssh to adroit-vis, della-gpu, stellar-vis1 or stellar-vis2
+$ module load anaconda3/2024.2
 $ conda create --name jax-gpu jax "jaxlib==0.4.23=cuda118*" -c conda-forge
 ```
 
 The directions above are for jaxlib version 0.4.23 with CUDA 11.8. To see the latest version use this command:
 
 ```
-$ module load anaconda3/2023.3
+$ module load anaconda3/2024.2
 $ conda search jaxlib -c conda-forge
 ...
 jaxlib                        0.4.23 cuda118py39hb35ebbd_200  conda-forge
@@ -44,7 +44,7 @@ A sample Slurm script is shown below:
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2023.9
+module load anaconda3/2024.2
 conda activate jax-gpu
 
 python svd.py
@@ -65,10 +65,10 @@ jnp.linalg.svd(np.random.random(size=(N, N)))
 The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
 
 ```
-module load anaconda3/2024.2
-conda create --name jx-env python=3.11 -y
-conda activate jx-env
-pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+$ module load anaconda3/2024.2
+$ conda create --name jx-env python=3.11 -y
+$ conda activate jx-env
+$ pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 ```
 
 ### Traverse
@@ -88,7 +88,7 @@ You will probably encounter the following error which arises because the build s
 ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel on this platform.
 ```
 
-### CPU-Only Version (Della, Perseus)
+### CPU-Only Version (Della, Stellar)
 
 Here are the installation directions for the CPU-only clusters:
 
@@ -105,7 +105,7 @@ Run the commands below to submit the test job. Recall that the compute nodes do 
 
 ```bash
 $ ssh <YourNetID>@della-gpu.princeton.edu
-$ module load anaconda3/2022.5
+$ module load anaconda3/2024.2
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ git clone https://github.com/google/jax
 $ cd jax/examples
@@ -142,7 +142,7 @@ The Slurm script below (job.slurm) may be used on Della -- different modules are
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2021.11 cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
+module load anaconda3/2024.2 cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
 conda activate jax-gpu
 
 python mnist_classifier.py
