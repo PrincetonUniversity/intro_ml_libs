@@ -65,6 +65,7 @@ jnp.linalg.svd(np.random.random(size=(N, N)))
 Here are the installation directions for the CPU-only clusters:
 
 ```
+# ssh to della or stellar (not della-gpu, not stellar-vis1)
 $ module load anaconda3/2024.2
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
