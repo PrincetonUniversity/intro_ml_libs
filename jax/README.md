@@ -62,7 +62,14 @@ jnp.linalg.svd(np.random.random(size=(N, N)))
 
 ## Pip Installation
 
-As of July 7, 2023, it appears that the [pip directions](https://github.com/google/jax#installation) do not work. Please use the Conda directions above until this is resolved.
+The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
+
+```
+module load anaconda3/2024.2
+conda create --name jx-env python=3.11 -y
+conda activate jx-env
+pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+```
 
 ### Traverse
 
@@ -86,7 +93,7 @@ ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel
 Here are the installation directions for the CPU-only clusters:
 
 ```
-$ module load anaconda3/2022.5
+$ module load anaconda3/2024.2
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
 
