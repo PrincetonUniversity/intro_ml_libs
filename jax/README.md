@@ -18,6 +18,7 @@ The easiest way to install the GPU version of JAX with conda is:
 
 ```
 # ssh to adroit-vis, della-gpu, stellar-vis1 or stellar-vis2
+$ nvidia-smi  # MAKE SURE THERE IS A GPU ON YOUR LOGIN NODE
 $ module load anaconda3/2024.2
 $ conda create --name jax-gpu jax "jaxlib==0.4.23=cuda118*" -c conda-forge
 ```
