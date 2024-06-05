@@ -101,6 +101,10 @@ You will probably encounter the following error which arises because the build s
 ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel on this platform.
 ```
 
+## Profiling
+
+The see the profiling section on [https://github.com/NVIDIA/JAX-Toolbox/tree/main](https://github.com/NVIDIA/JAX-Toolbox/tree/main).
+
 ## Example Job for GPU Version
 
 Run the commands below to submit the test job. Recall that the compute nodes do not have internet access so we have to download the data on the head node in advance.
