@@ -19,17 +19,8 @@ The easiest way to install the GPU version of JAX with conda is:
 ```
 # ssh to adroit-vis, della-gpu, stellar-vis1 or stellar-vis2
 $ nvidia-smi  # MAKE SURE THERE IS A GPU ON YOUR LOGIN NODE
-$ module load anaconda3/2024.2
-$ conda create --name jax-gpu jax "jaxlib==0.4.23=cuda118*" -c conda-forge
-```
-
-The directions above are for jaxlib version 0.4.23 with CUDA 11.8. To see the latest version use this command:
-
-```
-$ module load anaconda3/2024.2
-$ conda search jaxlib -c conda-forge
-...
-jaxlib                        0.4.23 cuda118py39hb35ebbd_200  conda-forge
+$ module load anaconda3/2024.6
+$ conda create --name jax-gpu jaxlib=*=*cuda* jax cuda-nvcc -c conda-forge
 ```
 
 A sample Slurm script is shown below:
@@ -45,7 +36,7 @@ A sample Slurm script is shown below:
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2024.2
+module load anaconda3/2024.6
 conda activate jax-gpu
 
 python svd.py
@@ -78,10 +69,10 @@ See [this page](https://researchcomputing.princeton.edu/python) for Slurm script
 The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
 
 ```
-$ module load anaconda3/2024.2
-$ conda create --name jx-env python=3.11 -y
+$ module load anaconda3/2024.6
+$ conda create --name jx-env python=3.12 -y
 $ conda activate jx-env
-$ pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+$ pip install -U "jax[cuda12]"
 ```
 
 ## Traverse
