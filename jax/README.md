@@ -12,12 +12,12 @@ together for high-performance machine learning research. JAX can be used for:
 
 ## Conda Installation
 
-### Adroit, Della, Stellar
+### Adroit, Della, Stellar, Tiger
 
 The easiest way to install the GPU version of JAX with conda is:
 
 ```
-# ssh to adroit-vis, della-gpu, stellar-vis1 or stellar-vis2
+# ssh to adroit-vis, della-gpu, stellar-vis1 or stellar-vis2, tiger-vis
 $ nvidia-smi  # MAKE SURE THERE IS A GPU ON YOUR LOGIN NODE
 $ module load anaconda3/2024.6
 $ conda create --name jax-gpu jaxlib=*=*cuda* jax cuda-nvcc -c conda-forge
@@ -36,7 +36,7 @@ A sample Slurm script is shown below:
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2024.6
+module load anaconda3/2024.10
 conda activate jax-gpu
 
 python svd.py
@@ -58,7 +58,7 @@ Here are the installation directions for the CPU-only clusters:
 
 ```
 # ssh to della or stellar (not della-gpu, not stellar-vis1)
-$ module load anaconda3/2024.2
+$ module load anaconda3/2024.10
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
 
@@ -69,27 +69,10 @@ See [this page](https://researchcomputing.princeton.edu/python) for Slurm script
 The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
 
 ```
-$ module load anaconda3/2024.6
+$ module load anaconda3/2024.10
 $ conda create --name jx-env python=3.12 -y
 $ conda activate jx-env
 $ pip install -U "jax[cuda12]"
-```
-
-## Traverse
-
-JAX is not supported on the POWER architecture. In the past we have found it to install and run successfully but this is no longer the case. You can try the build script if you like:
-
-```
-$ ssh <YourNetID>@traverse.princeton.edu
-$ cd software  # or another directory
-$ wget https://raw.githubusercontent.com/PrincetonUniversity/intro_ml_libs/master/jax/install_jax_traverse.sh
-$ bash install_jax_traverse.sh | tee jax.log
-```
-
-You will probably encounter the following error which arises because the build system produces an x86_64 wheel:
-
-```
-ERROR: jaxlib-0.1.65-cp37-none-manylinux2010_x86_64.whl is not a supported wheel on this platform.
 ```
 
 ## Profiling
@@ -102,7 +85,7 @@ Run the commands below to submit the test job. Recall that the compute nodes do 
 
 ```bash
 $ ssh <YourNetID>@della-gpu.princeton.edu
-$ module load anaconda3/2024.2
+$ module load anaconda3/2024.10
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ git clone https://github.com/google/jax
 $ cd jax/examples
@@ -139,7 +122,7 @@ The Slurm script below (job.slurm) may be used on Della -- different modules are
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2024.2 cudatoolkit/11.7 cudnn/cuda-11.x/8.2.0
+module load anaconda3/2024.10
 conda activate jax-gpu
 
 python mnist_classifier.py
