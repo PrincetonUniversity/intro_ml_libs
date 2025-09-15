@@ -19,7 +19,7 @@ The easiest way to install the GPU version of JAX with conda is:
 ```
 # ssh to adroit-vis, della-gpu, stellar-vis1 or stellar-vis2, tiger-vis
 $ nvidia-smi  # MAKE SURE THERE IS A GPU ON YOUR LOGIN NODE
-$ module load anaconda3/2024.10
+$ module load anaconda3/2025.6
 $ conda create --name jax-gpu jaxlib=*=*cuda* jax cuda-nvcc -c conda-forge
 ```
 
@@ -36,7 +36,7 @@ A sample Slurm script is shown below:
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2024.10
+module load anaconda3/2025.6
 conda activate jax-gpu
 
 python svd.py
@@ -58,7 +58,7 @@ Here are the installation directions for the CPU-only clusters:
 
 ```
 # ssh to della or stellar (not della-gpu, not stellar-vis1)
-$ module load anaconda3/2024.10
+$ module load anaconda3/2025.6
 $ conda create --name jax-cpu --channel conda-forge --override-channels jax "libblas=*=*mkl"
 ```
 
@@ -69,7 +69,7 @@ See [this page](https://researchcomputing.princeton.edu/python) for Slurm script
 The [pip directions](https://github.com/google/jax#installation) translate to the following on our systems:
 
 ```
-$ module load anaconda3/2024.10
+$ module load anaconda3/2025.6
 $ conda create --name jx-env python=3.12 -y
 $ conda activate jx-env
 $ pip install -U "jax[cuda12]"
@@ -85,7 +85,7 @@ Run the commands below to submit the test job. Recall that the compute nodes do 
 
 ```bash
 $ ssh <YourNetID>@della-gpu.princeton.edu
-$ module load anaconda3/2024.10
+$ module load anaconda3/2025.6
 $ mkdir /scratch/gpfs/<YourNetID>/jax_test && cd /scratch/gpfs/<YourNetID>/jax_test
 $ git clone https://github.com/google/jax
 $ cd jax/examples
@@ -122,7 +122,7 @@ The Slurm script below (job.slurm) may be used on Della -- different modules are
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
-module load anaconda3/2024.10
+module load anaconda3/2025.6
 conda activate jax-gpu
 
 python mnist_classifier.py
