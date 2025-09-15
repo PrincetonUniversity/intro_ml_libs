@@ -18,40 +18,16 @@
 
 ## Installation
 
-### Tiger or Adroit (GPU)
+### Adroit, Della, Stellar, Tiger (GPU)
 
-Install `cuml` and its dependencies `cudf` and `dask-cudf`:
-
-```bash
-# for live workshop ~/.condarc should be directing the install to /scratch/network or /scratch/gpfs
-$ module load anaconda3/2020.11
-$ conda create -n rapids-0.18 -c rapidsai -c nvidia -c conda-forge -c defaults cuml=0.18 python=3.8 cudatoolkit=11.0
-```
-
-Or install all components of Rapids:
+install all components of Rapid:
 
 ```bash
-# for live workshop ~/.condarc should be directing the install to /scratch/network or /scratch/gpfs
-$ module load anaconda3/2020.11
-$ conda create -n rapids-0.18 -c rapidsai -c nvidia -c conda-forge -c defaults rapids=0.18 python=3.8 cudatoolkit=11.0
+$ module load anaconda3/2025.6
+$ conda create --name rapids-25.08 -c rapidsai -c conda-forge -c nvidia rapids=25.08 python=3.12 'cuda-version>=12.0,<=12.9'
 ```
 
-There is also a container [here](https://hub.docker.com/r/rapidsai/rapidsai/) which can be used on our systems with [Singularity](https://researchcomputing.princeton.edu/support/knowledge-base/singularity).
-
-
-### Traverse
-
-`cuDF` and `cuML` are available in the IBM WML-CE channel. You can make an environment like this:
-
-```
-$ ssh <YourNetID>@traverse.princeton.edu
-$ module load anaconda3/2020.11
-$ CHNL="https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda"
-$ conda create --name rapids-env --channel ${CHNL} cudf cuml
-# accept the license agreement
-```
-
-There are also dask-based packages available like `dask-cudf`. To see all the packages point your browser to `https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda`.
+There is also a container [here](https://hub.docker.com/r/rapidsai/rapidsai/) which can be used on our systems with [Apptainer](https://researchcomputing.princeton.edu/support/knowledge-base/apptainer).
 
 ## Using cuDF
 
