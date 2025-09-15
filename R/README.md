@@ -8,6 +8,7 @@ The Caret package provides many ML models with the ability to train in parallel.
 
 ```
 $ ssh <YourNetID>@adroit.princeton.edu
+$ module load R/4.5.1
 $ R
 > install.packages(c("caret", "doParallel"))
 > q()
@@ -44,6 +45,8 @@ Below is an appropriate Slurm script that takes advantage of the parallelism off
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
+module load R/4.5.1
+
 Rscript demo.R
 ```
 
